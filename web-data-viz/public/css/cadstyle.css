@@ -157,6 +157,15 @@ main{
     }
 }
 
+.conta{
+    font-family: 'manrope';
+     color: white;
+     font-size: 20px;
+     a{
+        text-decoration: none;
+     }
+}
+
 .submit{
     font-family: 'inter';
     margin-top: 2vh;
