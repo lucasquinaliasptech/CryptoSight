@@ -27,6 +27,7 @@ body{
     overflow: hidden;
     position: relative;
     height: 60vh;
+    animation: piscar .7s;
 
     img{
         height: 60vh;
@@ -78,6 +79,7 @@ main{
 .seta{
     padding-left: 0.5vw;
     transition: .2s;
+    animation: seta .2s ease-out;
 }
 .seta:hover{
     cursor: pointer;
@@ -92,12 +94,16 @@ main{
     display: flex;
     align-items: center;
     gap: 2vw;
+    img{
+        animation: surgir .2s;
+    }
     .crypto{
 
         font-family: 'manrope';
         font-weight: 800;
         font-size: 48px;
         color: white;
+        animation: surgir .35s;
     }
 }
 
@@ -111,6 +117,7 @@ main{
         font-size: 48px;
         font-weight: 800;
         color: white;
+        animation: surgir .5s;
     }
     #bvindo{
         font-size: 64px;
@@ -157,6 +164,14 @@ main{
     }
 }
 
+.dir{
+    animation: daDireita .4s ease-in-out;
+}
+
+.esq{
+    animation: daEsquerda .4s ease-in-out;
+}
+
 .conta{
     font-family: 'manrope';
      color: white;
@@ -176,6 +191,7 @@ main{
     border-radius: 15px;
     color: white;
     background: linear-gradient(45deg, #207F70, #00E6A6);
+    animation: surgir .7s ease-in;
 }
 
 .submit:hover{
@@ -183,6 +199,68 @@ main{
     cursor: pointer;
     transform: scale(1.05);
     box-shadow: 0 0 5px 0.5px #00E6A6;
+}
+
+/* Animações */
+
+@keyframes surgir {
+    from{
+        filter: blur(10px);
+        opacity: 0;
+        scale: 0.5;
+    }
+    to{
+        filter: blur(0);
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+@keyframes daDireita{
+    from{
+        transform: translateX(-10vw);
+        opacity: 0;
+        filter: blur(40px);
+    }
+    to{
+        translateX: 0vw;
+        opacity: 1;
+        filter: blur();
+    }
+}
+
+@keyframes daEsquerda{
+    from{
+        transform: translateX(10vw);
+        opacity: 0;
+        filter: blur(40px);
+    }
+    to{
+        translateX: 0vw;
+        opacity: 1;
+        filter: blur();
+    }
+}
+
+@keyframes seta{
+    from{
+        transform: translateX(20vh);
+        filter: blur(40px);
+    }
+
+    to{
+        transform: translateX(0);
+        filter: blur(0);
+    }
+}
+
+@keyframes piscar{
+
+    25%{opacity: 0;}
+    50%{opacity: 1;}
+    60%{opacity: 0;}
+    70%{opacity: 1;}
+    100%{opacity: 1;}
 }
 
 /* Fonts */
