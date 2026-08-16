@@ -17,11 +17,48 @@ body{
         background-size: 1px 1px; */
 }
 
-.union{
+
+.quadrados{
     position: absolute;
-    height: 60vh;
     bottom: 0;
     left: 0;
+}
+.union{
+    overflow: hidden;
+    position: relative;
+    height: 60vh;
+
+    img{
+        height: 60vh;
+    }
+}
+
+.union-normal{
+    position: relative;
+    z-index: 1;
+    filter: brightness(70%);
+}
+
+.union-bright{
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    opacity: 0;
+    filter: brightness(400%);
+       mask-image: radial-gradient(
+        circle 100px at var(--mouse-x) var(--mouse-y),
+        white 50%,
+        transparent);
+         -webkit-mask-image: radial-gradient(
+        circle 100px at var(--mouse-x) var(--mouse-y),
+        white 50%,
+        transparent
+    );
+    pointer-events: none;
+}
+
+.union:hover .union-bright{
+    opacity: 1;
 }
 
 main{
@@ -74,6 +111,9 @@ main{
         font-size: 48px;
         font-weight: 800;
         color: white;
+    }
+    #bvindo{
+        font-size: 64px;
     }
 }
 
