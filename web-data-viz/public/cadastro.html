@@ -1,59 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/cadstyle.css">
-    <link rel="icon" href="./assets/imgs/ChatGPT_Image_11_de_ago._de_2026__13_30_37-removebg-preview(1) 2.png">
-    <title>Cadastro</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/cadstyle.css">
+  <link rel="icon" href="./assets/imgs/ChatGPT_Image_11_de_ago._de_2026__13_30_37-removebg-preview(1) 2.png">
+  <title>Cadastro</title>
 </head>
+
 <body>
-    <div class="quadrados">
+  <div class="quadrados">
     <div class="union">
-    <img src="./assets/imgs/Union.png" alt="" class="union-normal">
-    <img src="./assets/imgs/union-bright.png" alt="" class="union-bright">
+      <img src="./assets/imgs/Union.png" alt="" class="union-normal">
+      <img src="./assets/imgs/union-bright.png" alt="" class="union-bright">
     </div>
-    </div>
-    <main>
-        <div class="esquerda">
-        <div class="seta" onclick="history.back()">
+
+  </div>
+  <main>
+    <div class="impedicao">
+      <div class="cartao" id="cartao">
+        <div class="frente" onclick="virar()">
+          <div class="logo">
+            <img src="./assets/imgs/ChatGPT_Image_11_de_ago._de_2026__13_30_37-removebg-preview(1) 2.png" alt=""
+              class="icone">
+          </div>
+        </div>
+        <div class="tras">
+          <div class="seta" onclick="history.back()">
             <img src="./assets/imgs/seta.png" alt="">
+          </div>
+          <div class="titulo">Cadastre um novo usuário</div>
+          <div class="form">
+            <label class="campos esq">
+              <span class="campo">Nome:</span>
+              <input type="text" id="nome_input" placeholder="Digite seu nome..">
+            </label>
+            <label class="campos dir">
+              <span class="campo">Email:</span>
+              <input type="email" id="email_input" placeholder="Digite seu email..">
+            </label>
+            <label class="campos esq">
+              <span class="campo">Senha:</span>
+              <input type="password" id="senha_input" placeholder="Digite sua senha..">
+            </label>
+            <label class="campos dir">
+              <span class="campo">Confirmar senha:</span>
+              <input type="password" id="confirmacao_senha_input" placeholder="Digite sua senha..">
+            </label>
+            <div class="conta">Já possui uma <a href="login.html">conta</a>?</div>
+            <button class="submit" onclick="cadastrar()">CADASTRAR</button>
+          </div>
         </div>
-        <div class="logo">
-            <img src="./assets/imgs/ChatGPT_Image_11_de_ago._de_2026__13_30_37-removebg-preview(1) 2.png" alt="" class="icone">
-            <div class="crypto">CryptoSight</div>
-        </div>
-        </div>
-        <div class="direita">
-            <div class="titulo">Cadastre um novo usuário</div>
-            <div class="form">
-                <label class="campos esq">
-                    <span class="campo">Nome:</span>
-                    <input type="text" id="nome_input" placeholder="Digite seu nome..">
-                </label>
-                <label class="campos dir">
-                    <span class="campo">Email:</span>
-                    <input type="email" id="email_input" placeholder="Digite seu email..">
-                </label>
-                <label class="campos esq">
-                    <span class="campo">Senha:</span>
-                    <input type="password" id="senha_input" placeholder="Digite sua senha..">
-                </label>
-                <label class="campos dir">
-                    <span class="campo">Confirmar senha:</span>
-                    <input type="password" id="confirmacao_senha_input" placeholder="Digite sua senha..">
-                </label>
-                <div class="conta">Já possui uma <a href="login.html">conta</a>?</div>
-                <button class="submit" onclick="cadastrar()">CADASTRAR</button>
-            </div>
-        </div>
-    </main>
+      </div>
+    </div>
+    <div class="esquerda">
+      <div class="seta" onclick="history.back()">
+        <img src="./assets/imgs/seta.png" alt="">
+      </div>
+      <div class="logo">
+        <img src="./assets/imgs/ChatGPT_Image_11_de_ago._de_2026__13_30_37-removebg-preview(1) 2.png" alt=""
+          class="icone">
+        <div class="crypto">CryptoSight</div>
+      </div>
+    </div>
+    <div class="direita">
+      <div class="titulo">Cadastre um novo usuário</div>
+      <div class="form">
+        <label class="campos esq">
+          <span class="campo">Nome:</span>
+          <input type="text" id="nome_input" placeholder="Digite seu nome..">
+        </label>
+        <label class="campos dir">
+          <span class="campo">Email:</span>
+          <input type="email" id="email_input" placeholder="Digite seu email..">
+        </label>
+        <label class="campos esq">
+          <span class="campo">Senha:</span>
+          <input type="password" id="senha_input" placeholder="Digite sua senha..">
+        </label>
+        <label class="campos dir">
+          <span class="campo">Confirmar senha:</span>
+          <input type="password" id="confirmacao_senha_input" placeholder="Digite sua senha..">
+        </label>
+        <div class="conta">Já possui uma <a href="login.html">conta</a>?</div>
+        <button class="submit" onclick="cadastrar()">CADASTRAR</button>
+      </div>
+    </div>
+  </main>
 </body>
+
 </html>
 
 <script src="animations.js"></script>
 
 <script>
+  function virar() {
+    cartao.style.transform = "rotateY(180deg)";
+  }
   function cadastrar() {
     // aguardar();
 
@@ -62,7 +106,7 @@
     var nomeVar = nome_input.value;
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
-    var confirmacaoSenhaVar = confirmacao_senha_input.value;  
+    var confirmacaoSenhaVar = confirmacao_senha_input.value;
 
     // Verificando se há algum campo em branco
     if (
