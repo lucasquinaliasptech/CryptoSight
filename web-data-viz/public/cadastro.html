@@ -17,48 +17,12 @@
     </div>
 
   </div>
-  <main>
-    <div class="impedicao">
-      <div class="cartao" id="cartao">
-        <div class="frente" onclick="virar()">
-          <div class="logo">
-            <img src="./assets/imgs/ChatGPT_Image_11_de_ago._de_2026__13_30_37-removebg-preview(1) 2.png" alt=""
-              class="icone">
-          </div>
-        </div>
-        <div class="tras">
-          <div class="seta" onclick="history.back()">
-            <img src="./assets/imgs/seta.png" alt="">
-          </div>
-          <div class="titulo">Cadastre um novo usuário</div>
-          <div class="form">
-            <label class="campos esq">
-              <span class="campo">Nome:</span>
-              <input type="text" id="nome_input" placeholder="Digite seu nome..">
-            </label>
-            <label class="campos dir">
-              <span class="campo">Email:</span>
-              <input type="email" id="email_input" placeholder="Digite seu email..">
-            </label>
-            <label class="campos esq">
-              <span class="campo">Senha:</span>
-              <input type="password" id="senha_input" placeholder="Digite sua senha..">
-            </label>
-            <label class="campos dir">
-              <span class="campo">Confirmar senha:</span>
-              <input type="password" id="confirmacao_senha_input" placeholder="Digite sua senha..">
-            </label>
-            <div class="conta">Já possui uma <a href="login.html">conta</a>?</div>
-            <button class="submit" onclick="cadastrar()">CADASTRAR</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="esquerda">
+  <main id="gira">
+    <div class="esquerda" >
       <div class="seta" onclick="history.back()">
         <img src="./assets/imgs/seta.png" alt="">
       </div>
-      <div class="logo">
+      <div class="logo" onclick="virar()">
         <img src="./assets/imgs/ChatGPT_Image_11_de_ago._de_2026__13_30_37-removebg-preview(1) 2.png" alt=""
           class="icone">
         <div class="crypto">CryptoSight</div>
@@ -95,9 +59,11 @@
 <script src="animations.js"></script>
 
 <script>
+  if(window.innerWidth<=1024){
   function virar() {
-    cartao.style.transform = "rotateY(180deg)";
+    gira.style.transform = "rotateY(180deg)";
   }
+}
   function cadastrar() {
     // aguardar();
 
