@@ -8,17 +8,17 @@ function validarSessao() {
     if (email != null && nome != null) {
         b_usuario.innerHTML = nome;
     } else {
-        window.location = "../login(aqua).html";
+        window.location = "../login.html";
     }
 }
 
 function limparSessao() {
     sessionStorage.clear();
-    window.location = "../login(aqua).html";
+    window.location = "../login.html";
 }
 
 // carregamento (loading)
-function aguardar() {
+/* function aguardar() {
     var divAguardar = document.getElementById("div_aguardar");
     divAguardar.style.display = "flex";
 }
@@ -32,5 +32,5 @@ function finalizarAguardar(texto) {
         divErrosLogin.style.display = "flex";
         divErrosLogin.innerHTML = texto;
     }
-}
+} */
 

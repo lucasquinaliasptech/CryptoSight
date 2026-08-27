@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="./assets/imgs/ChatGPT_Image_11_de_ago._de_2026__13_30_37-removebg-preview(1) 2.png">
+   <script type="module"
+    src="https://cdn.jsdelivr.net/npm/@google/model-viewer@4.1.0/dist/model-viewer.min.js">
+</script>
+    <title>Home</title>
+</head>
+<body>
+    <header>
+        <div class="bolha hover1" id="b1"></div>
+        <div class="bolha hover2" id="b2"></div>
+        <div class="bolha hover3" id="b3"></div>
+           <div class="quadrados">
+    <div class="union">
+    <img src="./assets/imgs/Union2.png" alt="" class="union-normal">
+    <img src="./assets/imgs/Union2-bright.png" alt="" class="union-bright">
+    </div>
+    </div>
+        <div class="esquerdaH">
+            <div class="logo">
+            <img src="./assets/imgs/ChatGPT_Image_11_de_ago._de_2026__13_30_37-removebg-preview(1) 2.png" alt="" class="icone">
+            <div class="crypto">CryptoSight</div>
+        </div>
+        <div class="slogan">
+            Sua <span class="sloganGradiente">mineração</span> com o <span class="sloganGradiente">melhor monitoramento</span>
+        </div>
+        </div>
+        <div class="direitaH"><a class="btnJuntar" href="./cadastro.html"><button class="juntar hover">Juntar-se</button></a></div>
+        <nav class="navbar">
+            <ul class="nav-itens">
+            <li class="secoes"><a href="">Home</a></li>
+            <li class="secoes"><a href="">Solução</a></li>
+            <li class="secoes"><a href="">Monitoramento</a></li>
+            <li class="secoes"><a href="">Como funciona</a></li>
+            <li class="secoes"><a href="">Sobre nós</a></li>
+        </ul></nav>
+        <a href="./login.html" class="btnLogin"><button class="login">Login</button></a>
+    </header>
+    <main>
+        <section class="primeira">
+            <div class="entender">
+                <div class="textoEntender">
+                    <h1 class="titulo">Antes de monitorar, é preciso entender</h1>
+                    <div class="oqe">A <span class="oqeGradiente">mineração de criptomoedas</span> é o processo de usar o <span class="oqeGradiente">poder computacional</span> para <span class="oqeGradiente">validar transações</span>, proteger a rede e <span class="oqeGradiente">criar blocos</span> em uma <a class="oqeGradiente"href="#blockchain">blockchain.</a> Os mineradores competem para resolver <span class="oqeGradiente">quebra-cabeças matemáticos complexos</span>, e o primeiro a ter sucesso adiciona o próximo bloco ao <a class="oqeGradiente"href="#blockchain">blockchain</a> e recebe<span class="oqeGradiente"> recompensas em criptomoeda</span>. A mineração de criptomoedas é um <span class="oqeGradiente">trabalho essencial</span> para que as transações com moedas digitais sejam validadas de forma <span class="oqeGradiente">segura</span>.</div>
+                </div>
+            </div>
+            <div class="metodos">
+                <div class="tituloMetodos">Existem 2 formas de minerar:</div>
+            <div class="proofs">
+                <div class="pow">
+                    <div class="pow-conteudo"><div class="powTitle">POW</div><div class="powDescricao">Nosso foco com essa solução é o PoW, já que exige poder computacional avançado e eletricidade, método no qual um ou vários computadores executam cálculos repetitivos em busca do hash no bloco que estão inseridos, com o intuito de acoplar outro bloco à <a class="oqeGradiente"href="#blockchain">blockchain.</a></div></div>
+                </div>
+                <div class="cards-proofs"><div class="posTitle">POS</div><div class="posDescricao">A participação na validação está relacionada ao stake (ativos depositados/bloqueados) e ao mecanismo específico da <a class="oqeGradiente"href="#blockchain">blockchain</a>, ou seja utiliza de um capital inicial dos usuários como uma garantia para serem elegíveis como um intermediário na validação de transações, garantindo a veracidade da transação. </div></div>
+            </div></div>
+        </section>
+        <section class="segunda" id="blockchain">
+            <h1 class="block">BLOCKCHAIN</h1>
+            <div class="card-block">É uma infraestrutura que atua como um banco de dados descentralizado, distribuído e imutável, conectado a vários computadores, tornando-o resistente a adulterações. Registra transações em bloco, onde cada bloco se conecta um com o outro de maneira cronológica e segura, que permite o registro de transações e rastreamentos de ativos. É a base para garantir a integridade de moedas digitais, como Bitcoin e Ethereum. <br>Os blocos são informações sobre as atividades realizadas em uma blockchain. São separados em duas partes principais: o corpo e o cabeçalho do bloco, que é responsável pela segurança, validação e conexão cronológica do dado, trazendo hash do bloco anterior, raíz de merkle que representa matematicamente as transações daquele bloco, o momento exato do registro do bloco, a versão do bloco ou do protocolo da blockchain e o identificador de dificuldade para determinar o quão difícil é encontrar o hash correto para o bloco naquele momento da rede. Já o corpo foca no armazenamento dos dados, contendo a lista de transações válidas e verificadas que ocorreram no período de criação do bloco, endereços e chaves públicas das carteiras de origem e destino de cada operação, quantidade de moedas ou tokens movimentados (valores) e as taxas de transação.  </div>
+            <div class="funcionamento">
+                <div class="imgs">
+                    <img class="blockchainImg" src="./assets/imgs/blockchain.png" alt="">
+                <img class="blockchainImgBlack" id="black" src="./assets/imgs/blockchainblack.png" alt="">
+                </div>
+            </div>
+        </section>
+        <section id="quarta">
+            <model-viewer
+        src="./assets/tresD/ant_miner_s19_pro.glb"
+        camera-controls
+        auto-rotate
+        shadow-intensity="1">
+    </model-viewer>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+  <!--  <div class="blur-topo"></div>
+   <div class="blur-meio"></div> -->
+</body>
+</html>
+
+<script src="animations.js"></script>

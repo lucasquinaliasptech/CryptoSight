@@ -25,11 +25,15 @@
         </div>
         </div>
         <div class="direita">
-            <div class="titulo">Cadastre um novo usuário</div>
+            <div class="titulo" id="titulo">Cadastre um novo usuário</div>
             <div class="form">
                 <label class="campos esq">
                     <span class="campo">Nome:</span>
                     <input type="text" id="nome_input" placeholder="Digite seu nome..">
+                </label>
+                    <label class="campos dir">
+                    <span class="campo">CPF:</span>
+                    <input type="email" id="cpf_input" maxlength="11" placeholder="Digite seu cpf..">
                 </label>
                 <label class="campos dir">
                     <span class="campo">Email:</span>
@@ -42,6 +46,10 @@
                 <label class="campos dir">
                     <span class="campo">Confirmar senha:</span>
                     <input type="password" id="confirmacao_senha_input" placeholder="Digite sua senha..">
+                </label>
+                <label class="campos dir">
+                    <span class="campo">Token:</span>
+                    <input type="text" id="token_input" maxlength="13" placeholder="Digite o token da empresa..">
                 </label>
                 <div class="conta">Já possui uma <a href="login.html">conta</a>?</div>
                 <button class="submit" onclick="cadastrar()">CADASTRAR</button>
@@ -60,26 +68,34 @@
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
     var nomeVar = nome_input.value;
+    var cpfVar = cpf_input.value;
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
-    var confirmacaoSenhaVar = confirmacao_senha_input.value;  
+    var confirmacaoSenhaVar = confirmacao_senha_input.value; 
+    var tokenVar = token_input.value; 
 
     // Verificando se há algum campo em branco
     if (
       nomeVar == "" ||
+      cpfVar == "" ||
       emailVar == "" ||
       senhaVar == "" ||
-      confirmacaoSenhaVar == ""
+      confirmacaoSenhaVar == "" ||
+      tokenVar == ""
     ) {
       cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
+      /* mensagem_erro.innerHTML =
         "(Mensagem de erro para todos os campos em branco)";
-
-      finalizarAguardar();
+ */
+      /* finalizarAguardar(); */
       return false;
-    } else {
+    } 
+    if(senhaVar != confirmacaoSenhaVar){
+        alert("Confirmação de senha falhou")
+        return false;
+    }/* else {
       setInterval(sumirMensagem, 5000);
-    }
+    } */
 
     // Enviando o valor da nova input
     fetch("/usuarios/cadastrar", {
@@ -91,39 +107,41 @@
         // crie um atributo que recebe o valor recuperado aqui
         // Agora vá para o arquivo routes/usuario.js
         nomeServer: nomeVar,
+        cpfServer: cpfVar,
         emailServer: emailVar,
         senhaServer: senhaVar,
+        tokenServer: tokenVar,
       }),
     })
       .then(function (resposta) {
         console.log("resposta: ", resposta);
 
         if (resposta.ok) {
-          cardErro.style.display = "block";
+      /*     cardErro.style.display = "block"; */
 
-          mensagem_erro.innerHTML =
+         /*  mensagem_erro.innerHTML =
             "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-
+ */
           setTimeout(() => {
-            window.location = "login(aqua).html";
+            window.location = "login.html";
           }, "2000");
 
-          limparFormulario();
-          finalizarAguardar();
+          /* limparFormulario(); */
+          /* finalizarAguardar(); */
         } else {
           throw "Houve um erro ao tentar realizar o cadastro!";
         }
       })
       .catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`);
-        finalizarAguardar();
+       /*  finalizarAguardar(); */
       });
 
     return false;
   }
 
-
+/* 
   function sumirMensagem() {
     cardErro.style.display = "none";
-  }
+  } */
 </script>
