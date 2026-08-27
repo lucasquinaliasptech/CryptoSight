@@ -276,7 +276,7 @@ header{
 .titulo{
     font-family: 'inter';
     font-weight: 900;
-    font-size: 44pt;
+    font-size: 50pt;
     background: linear-gradient(45deg,#207F70, #00E6A6, #207F70, #207F70 );
     background-size: 400% 100%;
     animation: textoColorido 5s linear infinite alternate ;
@@ -287,7 +287,7 @@ header{
 .oqe{
     font-family: 'manrope';
     color: white;
-    font-size: 13pt;
+    font-size: 18pt;
 }
 
 
@@ -448,7 +448,6 @@ header{
     height: 80vh;
     position: relative;
     display: flex;
-    justify-content: center;
     align-items: center;
     padding-right: 24vw;
 }
@@ -476,16 +475,29 @@ header{
 .card-block{
     color: #cefff8;
     padding: 3%;
+    margin-top: 2vh;
+    margin-left: 8vw;
     font-family: 'inter';
     font-weight: 700;
-    font-size: 13.3pt;
-    height: 70%;
-    width: 50vw;
+    font-size: 13pt;
+    height: 75%;
+    width: 40vw;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     backdrop-filter: blur(2.3px);
     border: 1px solid #00E6A6;
     transition: all .2s;
+    p{
+        text-indent: 2vw;
+    }
+}
+
+.oqueE{
+    font-size: 20pt;
+    font-weight: 800;
+    color: #207F70;
+    
+
 }
 
 .card-block:hover{
@@ -494,11 +506,11 @@ header{
 
 .funcionamento{
     position: absolute;
-    right: 2vw;
-    bottom: 20vh;
+    right: 6vw;
+    bottom: 15vh;
     transition:all .2s ;
     img{
-        height: 41vh;
+        height: 46vh;
     }
 }
 
@@ -520,6 +532,49 @@ header{
 }
 
 #quarta{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+
+}
+
+.tituloSolus{
+    font-family: 'inter';
+    font-weight: 900;
+    font-size: 40pt;
+    position: absolute;
+    left: 7%;
+    top: -3%;
+    color: #0f6b5d;
+}
+
+.solucoes{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.solucao{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.textoSolu{
+    flex-direction: column;
+    height: 100%;
+    display: flex;
+    gap: 10%;
+    justify-content: center;
+}
+
+.imgSolu{
+    img{
+        max-height: 100px;
+
+    }
+}
+
+#quinta{
     height: 90vh;
     width: 100vw;
 }

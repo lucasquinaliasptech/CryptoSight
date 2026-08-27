@@ -102,7 +102,7 @@ main{
 
         font-family: 'manrope';
         font-weight: 800;
-        font-size: 48px;
+        font-size: 3rem;
         color: white;
         animation: surgir .35s;
     }
@@ -112,12 +112,17 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
+<<<<<<< HEAD
     justify-content: space-between;
     padding: 5vh 0;
 
+=======
+    justify-content: center;
+    
+>>>>>>> 7141892ab47b9377382f539ec0783a395bb6e9ff
     .titulo{
         font-family: 'manrope';
-        font-size: 48px;
+        font-size: 3rem;
         font-weight: 800;
         color: white;
         animation: surgir .5s;
@@ -143,6 +148,7 @@ main{
 
 .campos{
     display: flex;
+    align-items: center;
     flex-direction: column;
     font-family: 'manrope';
     font-size: 20px;
@@ -206,7 +212,54 @@ main{
     transform: scale(1.05);
     box-shadow: 0 0 5px 0.5px #00E6A6;
 }
+.impedicao {
+    display: none;
+    place-self: center;
+    align-self: center;
+    position: absolute;
+    width: 90%;
+    height: fit-content;
+}
 
+.cartao {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease;
+}
+
+.frente,.tras {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.frente {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+}
+
+.tras {
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.tras .titulo {
+    font-family: 'manrope';
+    font-size: 3rem;
+    font-weight: 800;
+    color: white;
+    animation: surgir .5s;
+}
+
+#bvindo {
+    font-size: 50px;
+}
 /* Animações */
 
 @keyframes surgir {
@@ -268,7 +321,10 @@ main{
     70%{opacity: 1;}
     100%{opacity: 1;}
 }
-
+@keyframes girar{
+    from{transform: rotateY('0deg');}
+    to{transform: rotateY('180deg');}
+}
 /* Fonts */
 
 @font-face {
@@ -280,3 +336,34 @@ main{
     font-family: 'inter';
     src: url(../assets/fonts/Inter-VariableFont_opsz\,wght.ttf);
 }
+@media screen and (max-width:1024px){
+    main{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        transition: transform 0.8s ease;
+        align-items: center;
+        
+    }
+
+    .esquerda{
+        position: absolute;
+        backface-visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .logo{
+        z-index: 99;
+    }
+    .direita{
+        position: absolute;
+        backface-visibility: hidden;
+        transform: rotateY(180deg);
+        display: flex;
+    }
+    }
+
