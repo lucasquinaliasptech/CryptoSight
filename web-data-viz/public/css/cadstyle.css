@@ -112,14 +112,9 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
-<<<<<<< HEAD
     justify-content: space-between;
     padding: 5vh 0;
-
-=======
     justify-content: center;
-    
->>>>>>> 7141892ab47b9377382f539ec0783a395bb6e9ff
     .titulo{
         font-family: 'manrope';
         font-size: 3rem;

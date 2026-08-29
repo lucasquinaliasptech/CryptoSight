@@ -117,10 +117,10 @@
                         <div class="tituloSolu">Monitore</div>
                         <div class="descricaoSolu">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore quisquam nulla excepturi rem fugiat, facere distinctio quia cum, doloribus officiis ratione corporis pariatur asperiores architecto sapiente ipsum numquam quo deserunt?</div>
                     </div>
-                    <div class="imgSolu"><img src="./assets/imgs/grafico.png" alt=""></div>
+                   <img src="./assets/imgs/grafico.png" alt="">
                 </div>
-                <div class="solucao">
-                    <div class="imgSolu"><img src="./assets/imgs/alerta.jpg" alt=""></div>
+                <div class="solucao" id="detec">
+                    <img src="./assets/imgs/alerta.jpg" alt="">
                     <div class="textoSolu">
                         <div class="tituloSolu">Detecte</div>
                         <div class="descricaoSolu">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos veniam officiis debitis nemo sit consectetur distinctio soluta fuga corporis voluptatibus, asperiores quidem voluptate nostrum molestiae. Nobis iste nulla provident sapiente.</div>
@@ -131,13 +131,30 @@
                         <div class="tituloSolu">Aja</div>
                         <div class="descricaoSolu">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia fuga a atque repudiandae. Molestiae, incidunt. Quibusdam, ipsum incidunt corporis ducimus commodi quisquam ex animi doloremque nisi. Aspernatur sunt ad corrupti?</div>
                     </div>
-                    <div class="imgSolu"><img src="" alt=""></div>
+                    <img src="./assets/imgs/manutencao.png" alt="">
                 </div>
             </div>
         </section>
         <section id="quinta">
-            <model-viewer src="./assets/tresD/ant_miner_s19_pro.glb" camera-controls auto-rotate shadow-intensity="1">
+            <h1 class="titulomaquina tituloAsic ativo">Conheça o <span class="asicT" >Asic</span></h1>
+            <h1 class="titulomaquina tituloGPU">Conheça a <span class="asicT" >GPU</span></h1>
+            <h1 class="titulomaquina tituloRig">Conheça o <span class="asicT" >MiningRig</span></h1>
+            <div class="maquinas">
+                <div class="gradiente"></div>
+                <div class="maquina">
+                    <div class="maquinaDescricao">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis fugit praesentium molestiae quos maxime quae at voluptas doloribus excepturi sunt laudantium, dolorem non eveniet nam labore! Id, doloremque dicta. Vel?</div>
+                <div class="escolha">
+                    <div class="escolher asicMiner selecionado">Asic</div>
+                    <div class="escolher gpu">GPU</div>
+                    <div class="escolher minerig">Mining Rig</div>
+                </div>
+                </div>
+            <model-viewer class="asic3d ativo" src="./assets/tresD/ant_miner_s19_pro.glb" camera-controls auto-rotate shadow-intensity="1">
             </model-viewer>
+            <model-viewer class="gpu3d" src="./assets/tresD/rx_480_gpu.glb" camera-controls auto-rotate shadow-intensity="1">
+            </model-viewer>
+            <model-viewer class="minerig3d" src="./assets/tresD/mining_rig.glb" camera-controls auto-rotate shadow-intensity="1">
+            </model-viewer></div>
         </section>
     </main>
     <footer>
@@ -150,3 +167,4 @@
 </html>
 
 <script src="animations.js"></script>
+<script src="modelos.js"></script>
