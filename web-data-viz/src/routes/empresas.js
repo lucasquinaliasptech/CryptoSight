@@ -16,5 +16,9 @@ router.get("/buscar/:id", function (req, res) {
   empresaController.buscarPorId(req, res);
 });
 
+router.post("/autenticar", function (req, res) {
+    empresaController.autenticarEmpresa(req, res);
+});
+
 
 module.exports = router;

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/cadstyle.css">
+    <link rel="icon" href="./assets/imgs/ChatGPT_Image_11_de_ago._de_2026__13_30_37-removebg-preview(1) 2.png">
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="quadrados">
+        <div class="union">
+            <img src="./assets/imgs/Union.png" alt="" class="union-normal">
+            <img src="./assets/imgs/union-bright.png" alt="" class="union-bright">
+        </div>
+    </div>
+    <main id="gira">
+        <div class="esquerda">
+            <div class="seta" onclick="history.back()">
+                <img src="./assets/imgs/seta.png" alt="">
+            </div>
+            <div class="logo" onclick="virar()">
+                <img src="./assets/imgs/ChatGPT_Image_11_de_ago._de_2026__13_30_37-removebg-preview(1) 2.png" alt=""
+                    class="icone">
+                <div class="crypto">CryptoSight</div>
+            </div>
+        </div>
+        <div class="direita">
+            <div class="titulo" id="bvindo">Bem-vindo de volta</div>
+            <div class="form">
+
+                <label class="campos esq">
+                    <span class="campo">CNPJ:</span>
+                    <input type="text" id="cnpj_input" placeholder="Digite seu CNPJ..">
+                </label>
+                <label class="campos dir">
+                    <span class="campo">Senha:</span>
+                    <input type="password" id="senha_input" placeholder="Digite sua senha..">
+                </label>
+                <div class="conta">Ainda não possui uma <a href="cadastro.html">conta</a>?</div>
+
+                <button class="submit" onclick="entrar()">ENTRAR</button>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
+
+<script src="animations.js"></script>
+
+<script>
+  if(window.innerWidth<=1024){
+  function virar() {
+    gira.style.transform = "rotateY(180deg)";
+  }
+}
+
+    function entrar() {
+     /*    aguardar(); */
+
+        var cnpjVar = cnpj_input.value;
+        var senhaVar = senha_input.value;
+
+        if (cnpjVar == "" || senhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "Preencha todos os campos";
+          /*   finalizarAguardar(); */
+            return false;
+        }
+       /*  else {
+            setInterval(sumirMensagem, 5000)
+        } */
+
+        console.log("FORM LOGIN: ", cnpjVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/empresas/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                cnpjServer: cnpjVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.CNPJ_USUARIO = json.cnpj;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                    setTimeout(function () {
+                        window.location = "./dashboard/cards.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+              /*       finalizarAguardar(texto); */
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+/* 
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    } */
+
+</script>
