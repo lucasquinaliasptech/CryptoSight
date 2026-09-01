@@ -19,22 +19,7 @@
   <!--header inicio-->
   <div class="header">
     <div class="container">
-      <h1 class="titulo">AquaTech</h1>
-      <ul class="navbar">
-        <li>
-          <a href="index.html">Inicial</a>
-        </li>
-        <li>
-          <a href="simulador.html">Simulador</a>
-        </li>
-        <li>|</li>
-        <li>
-          <a href="login.html">Login</a>
-        </li>
-        <li class="agora">
-          <a href="#">Cadastro</a>
-        </li>
-      </ul>
+      <h1 class="titulo">Cadastre sua empresa</h1>
     </div>
   </div>
   <!--header fim-->
@@ -49,10 +34,7 @@
       <div class="card card-cadastro">
         <h2>Bem-vindo!</h2>
         <div class="formulario">
-          <!--
-                         Para inserir mais um campo, copie uma das inputs abaixo.
-                         Assim que inserir vá para o script abaixo.
-                     -->
+          
           <div class="campo">
             <span>Razão social:</span>
             <input id="razaoSocial_input" type="text" placeholder="Ex.: CryptoSight Tecnologia LTDA" />
@@ -146,10 +128,7 @@
 <script>
 
   function cadastrarEmpresa() {
-    // aguardar();
-
-    //Recupere o valor da nova input pelo nome do id
-    // Agora vá para o método fetch logo abaixo
+   
     var razaoSocialVar = razaoSocial_input.value;
     var telefoneVar = telefone_input.value;
     var emailVar = email_input.value;
@@ -196,25 +175,23 @@
       numeroVar.trim() == ""
     ) {
       cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "Preencha todos s campos obrigatórios ";
+      mensagem_erro.innerHTML = "Preencha todos s campos obrigatórios ";
 
       finalizarAguardar();
-      return false;
+      return;
 
     } else if (razaoSocialVar.trim().length < 5) {
 
       cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "Razão Social deve possuir no mínimo 5 caracteres";
-      return false;
+      mensagem_erro.innerHTML = "Razão Social deve possuir no mínimo 5 caracteres";
+
+      return;
 
     } else if (telefoneVar.length != 11 || isNaN(telefoneVar)) {
 
       cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "Telefone inválido";
-      return false;
+      mensagem_erro.innerHTML = "Telefone inválido";
+      return;
 
     } else if (!(arroba_antes_ponto_com &&
       indice_arroba > -1 &&
@@ -222,51 +199,44 @@
       termina_em_ponto_com)) {
 
       cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "Email inválido";
-      return false;
+      mensagem_erro.innerHTML = "Email inválido";
+      return;
 
     } else if (nomeFantasiaVar.trim().length < 3) {
 
       cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "Nome Fantasia deve possuir no mínimo 3 caracteres";
-      return false;
+      mensagem_erro.innerHTML = "Nome Fantasia deve possuir no mínimo 3 caracteres";
+      return;
 
     } else if (cnpjVar.length != 14 || isNaN(cnpjVar)) {
 
       cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "CNPJ inválido";
-      return false;
+      mensagem_erro.innerHTML = "CNPJ inválido";
+      return;
 
     } else if (senhaVar.length < 6) {
 
       cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "Senha inválida: Mínimo 6 caracteres";
-      return false;
+      mensagem_erro.innerHTML = "Senha inválida: Mínimo 6 caracteres";
+      return;
 
     } else if (senhaVar != confirmacaoSenhaVar) {
 
       cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "As senhas precisam estar iguais";
-      return false;
+      mensagem_erro.innerHTML = "As senhas precisam estar iguais";
+      return;
 
     } else if (cepVar.length != 8 || isNaN(cepVar)) {
 
       cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "CEP inválido";
-      return false;
+      mensagem_erro.innerHTML = "CEP inválido";
+      return;
 
     } else if (!sede_sim.checked && !sede_nao.checked) {
 
       cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "Selecione se o endereço é sede ou não.";
-      return false;
+      mensagem_erro.innerHTML = "Selecione se o endereço é sede ou não.";
+      return;
 
     }
 
