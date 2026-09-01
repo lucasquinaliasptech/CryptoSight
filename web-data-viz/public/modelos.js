@@ -7,6 +7,9 @@ const rig3d = document.querySelector('.minerig3d');
 const tituloasic = document.querySelector('.tituloAsic');
 const titulogpu = document.querySelector('.tituloGPU');
 const titulorig = document.querySelector('.tituloRig');
+const descasic = document.querySelector('.descAsic');
+const descgpu = document.querySelector('.descGPU');
+const descrig = document.querySelector('.descRig');
 
 asic.addEventListener('click', function(){
     asic3d.classList.add('ativo');
@@ -18,6 +21,10 @@ asic.addEventListener('click', function(){
     tituloasic.classList.add('ativo');
     titulogpu.classList.remove('ativo');
     titulorig.classList.remove('ativo');
+    descasic.classList.add('ativo');
+    descgpu.classList.remove('ativo');
+    descrig.classList.remove('ativo');
+    
 });
 
 gpu.addEventListener('click', function(){
@@ -30,6 +37,9 @@ gpu.addEventListener('click', function(){
     tituloasic.classList.remove('ativo');
     titulogpu.classList.add('ativo');
     titulorig.classList.remove('ativo');
+    descasic.classList.remove('ativo');
+    descgpu.classList.add('ativo');
+    descrig.classList.remove('ativo');
 });
 
 rig.addEventListener('click', function(){
@@ -42,4 +52,7 @@ rig.addEventListener('click', function(){
     tituloasic.classList.remove('ativo');
     titulogpu.classList.remove('ativo');
     titulorig.classList.add('ativo');
+    descasic.classList.remove('ativo');
+    descgpu.classList.remove('ativo');
+    descrig.classList.add('ativo');
 });

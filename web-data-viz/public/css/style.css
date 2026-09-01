@@ -279,7 +279,7 @@ header{
     font-size: 50pt;
     background: linear-gradient(45deg,#207F70, #00E6A6, #207F70, #207F70 );
     background-size: 400% 100%;
-    animation: textoColorido 5s linear infinite alternate ;
+        animation: textoColorido 5s linear infinite alternate ;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -528,7 +528,78 @@ header{
     right: 2vw;
 }
 
-.blockchainImgBlack{
+
+#terceira{
+    display: flex;
+    flex-direction: column;
+    padding-left: 10%;
+    gap: 40vh;
+    margin-bottom: 10vh;
+    padding-top: 10vh;
+    padding-bottom: 20vh;
+    background: #0B1513;
+    box-shadow: 0 0 50px #09483f;
+}
+
+.tituloT{
+    position: sticky;
+    font-family: 'inter';
+    font-weight: 900;
+    font-size: 50pt;
+    background: linear-gradient(140deg, #7fded0, #207F70, #94c2bb );
+    background-clip: text;
+    color: transparent;
+    align-self: flex-end;
+    margin-right: 20%;
+    top: 15vh;
+    margin-top: 10vh;
+}
+
+.cartoes-problemas{
+    border: 2px solid #00E6A6;
+    position: sticky;
+    height: 60vh;
+    width: 50%;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    padding: 5%;
+}
+
+.titulo-problema{
+    font-family: 'inter';
+    font-weight: 800;
+    font-size: 35pt;
+    color: white;
+}
+
+.desc-problema{
+    font-family: 'manrope';
+    font-weight: 600;
+    font-size: 20pt;
+    color: rgb(255, 255, 255);
+}
+
+.diagnostico{
+    top: 15vh;
+    margin-top: -50vh;
+    background: linear-gradient(45deg, #207F70, #00E6A6);
+
+}
+
+.identificacao{
+    rotate: 1deg;
+    top: 18vh;
+    background: linear-gradient(135deg,#0d1412,#09483f,#131d1a );
+
+}
+
+.energetico{
+    rotate: -1deg;
+    top: 21vh;
+    background: linear-gradient(140deg, #7fded0, #207F70, #94c2bb );
 }
 
 #quarta{
@@ -687,12 +758,31 @@ header{
     justify-content: center;
 }
 
+.maquinaDescricao{
+    font-family: 'manrope';
+    color: #cefff8;
+    font-weight: 700;
+    font-size: 20pt;
+    padding-left: 10%;
+}
+
+.maquinaDescricao::before{
+    content: "•";
+    color: #00E6A6;
+    margin-right: 10px;
+}
+
+.descAsic, .descGPU, .descRig{
+    display: none;
+}
+
 .escolha{
-    height:100%;
+    height:60%;
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    padding-top: 10%;
+    justify-content: start;
     flex-direction: column;
     gap: 1%;
 }
@@ -703,7 +793,7 @@ header{
     text-transform: uppercase;
     font-size: 22pt;
     background: #035145;
-    height: 10%;
+    height: 16%;
     width: 40%;
     display: flex;
     justify-content: center;
@@ -759,9 +849,123 @@ model-viewer{
     display: none;
 }
 
-.asic3d.ativo, .gpu3d.ativo, .minerig3d.ativo, .tituloAsic.ativo, .tituloGPU.ativo, .tituloRig.ativo{
+.asic3d.ativo, .gpu3d.ativo, .minerig3d.ativo, .tituloAsic.ativo, .tituloGPU.ativo, .tituloRig.ativo, .descAsic.ativo, .descGPU.ativo, .descRig.ativo{
     display: block;
-};
+}
+
+#sexta{
+    box-shadow: 0 0 100px #09483f;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    height: 1000px;
+    width: 100%;
+    min-height: 100vh;
+    min-width: 100%;
+    background: url(../assets/imgs/blur.png) ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sexta-titulo{
+    position: absolute;
+   font-family: 'inter';
+    background: linear-gradient(140deg, #7fded0, #207F70, #94c2bb );
+    background-clip: text;
+    color: transparent;
+    font-weight: 900;
+    font-size: 50pt;
+    z-index: 99;
+    top: -2%;
+    left: 5vw;
+    text-shadow: none;
+    filter: drop-shadow(10px 10px 5px black);
+}
+
+.grid-cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin-top: 10vh;
+    height: calc(100% - 10vh);
+    width: 100%;
+    place-items: center;
+
+}
+
+.cards-metricas{
+    background: rgba(45, 45, 45, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5vh;
+    overflow: hidden;
+    gap: 6vh;
+    height: 50%;
+    width: 50%;
+    border-radius: 20px;
+    position: relative;
+}
+
+.cards-metricas::before{
+    content: "";
+    position: absolute;
+    top: var(--y);
+    left:var(--x);
+    transform: translate(-50%, -50%);
+    background: radial-gradient(var(--clr), transparent, transparent);
+    width: 400px;
+    height: 400px;
+    opacity: 0;
+    transition: all .5s, top 0s, left 0s;
+}
+
+.grid-cards .cards-metricas::after{
+    content: "";
+    position: absolute;
+    inset: 2px;
+    border-radius: 20px;
+    background: rgba(45, 45, 45, 0.75);
+}
+
+.cards-metricas:hover::before{
+    opacity: 1;
+}
+
+.titulo-card{
+    font-family: 'inter';
+    font-weight: 800;
+    z-index: 9999;
+    font-size: 30pt; 
+    background: linear-gradient(45deg,#32c4ae, #12f0b1, #2a9988, #32c4ae );
+    background-size: 400% 100%;
+    animation: textoColorido 5s linear infinite alternate ;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+}
+
+#setima{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+.titulo-setima{
+     font-family: 'inter';
+    background: linear-gradient(140deg, #7fded0, #207F70, #94c2bb );
+    background-clip: text;
+    color: transparent;
+    font-weight: 900;
+    font-size: 50pt;
+    position: absolute;
+    z-index: 99;
+    top: 6vh;
+    left: 5vw;
+    text-shadow: none;
+    filter: drop-shadow(10px 10px 5px black);
+}
 
 /* Animações */
 @keyframes textoColorido {
