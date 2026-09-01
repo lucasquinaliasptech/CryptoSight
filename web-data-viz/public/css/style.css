@@ -949,6 +949,9 @@ model-viewer{
 #setima{
     height: 100vh;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
 }
 
@@ -966,6 +969,31 @@ model-viewer{
     text-shadow: none;
     filter: drop-shadow(10px 10px 5px black);
 }
+
+.cards-carrossel{
+    overflow-x:auto ;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1vw;
+    height: 80%;
+    width: 80%;
+img{
+    height: 500px;
+}
+}
+
+.cards-carrossel::-webkit-scrollbar{
+    display: none;
+}
+
+.card-carrossel{
+    border-radius: 20px;
+    border:1px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    transition: all .2s;
+}
+
 
 /* Animações */
 @keyframes textoColorido {
