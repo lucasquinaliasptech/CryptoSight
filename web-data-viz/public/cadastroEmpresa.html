@@ -71,7 +71,7 @@
           </div>
           <div class="campo">
             <span>CNPJ:</span>
-            <input id="cnpj_input" type="text" placeholder="Digite o CNPJ da empresa" />
+            <input id="cnpj_input" type="text" maxlength="14" placeholder="Digite o CNPJ da empresa" />
           </div>
           <div class="campo">
             <span>Senha:</span>
@@ -83,7 +83,7 @@
           </div>
           <div class="campo">
             <span>Cep:</span>
-            <input id="cep_input" type="text" placeholder="Digite o CEP" />
+            <input id="cep_input" type="text" maxlength="14" placeholder="Digite o CEP" />
           </div>
           <div class="campo">
             <span>Estado:</span>
@@ -309,11 +309,9 @@
             "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 
           setTimeout(() => {
-            window.location = "login.html";
+            window.location = "loginEmpresa.html";
           }, 2000);
 
-          limparFormulario();
-          finalizarAguardar();
 
         } else {
 

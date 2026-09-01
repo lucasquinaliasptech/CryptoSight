@@ -185,6 +185,14 @@ header{
     animation-range: 0 90vh;
 }
 
+.btnLoginf{
+    position: fixed;
+    z-index: 999;
+       animation:surgir3 linear forwards;
+    animation-timeline:scroll() ;
+    animation-range: 0 90vh;
+}
+
 .login:hover{
        transition: .2s ease;
     cursor: pointer;
@@ -755,6 +763,25 @@ height: 100vh;
 
     100%{
         transform: translate(35vw,0vh);
+    }
+}
+
+@keyframes surgir3 {
+     0%{
+   opacity: 0;
+        transform: translate(35vw,-40vh);
+    }
+    50%{ cursor: default;
+        pointer-events: none;
+        opacity: 0;
+    }
+    70%{
+        opacity: 1;
+        transform: translate(35vw,-10vh);
+    }
+
+    100%{
+        transform: translate(23vw,0vh);
     }
 }
 

@@ -28,16 +28,7 @@
         <div class="crypto">CryptoSight</div>
       </div>
     </div>
-    <main>
-        <div class="esquerda">
-        <div class="seta" onclick="history.back()">
-            <img src="./assets/imgs/seta.png" alt="">
-        </div>
-        <div class="logo">
-            <img src="./assets/imgs/ChatGPT_Image_11_de_ago._de_2026__13_30_37-removebg-preview(1) 2.png" alt="" class="icone">
-            <div class="crypto">CryptoSight</div>
-        </div>
-        </div>
+       
         <div class="direita">
             <div class="titulo" id="titulo">Cadastre um novo usuário</div>
             <div class="form">
@@ -46,8 +37,14 @@
                     <input type="text" id="nome_input" placeholder="Digite seu nome..">
                 </label>
                 <label class="campos esq">
-                    <span class="campo">Cargo:</span>
-                    <input type="text" id="cargo_input" placeholder="Digite seu cargo..">
+                    <!-- <span class="campo">Cargo:</span>
+                    <input type="text" id="cargo_input" placeholder="Digite seu cargo.."> -->
+                    <span>Cargo:</span>
+                    <select name="" id="cargo_input">
+                      <option value="">Selecione</option>
+                      <option value="Administrador">Administrador</option>
+                      <option value="UsuarioComum">Usuário Padrão</option>
+                    </select>
                 </label>
                     <label class="campos dir">
                     <span class="campo">CPF:</span>
@@ -69,7 +66,6 @@
                 <button class="submit" onclick="cadastrar()">CADASTRAR</button>
             </div>
         </div>
-    </main>
 </body>
 
 </html>
