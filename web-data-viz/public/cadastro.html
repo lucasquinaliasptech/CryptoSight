@@ -45,6 +45,10 @@
                     <span class="campo">Nome:</span>
                     <input type="text" id="nome_input" placeholder="Digite seu nome..">
                 </label>
+                <label class="campos esq">
+                    <span class="campo">Cargo:</span>
+                    <input type="text" id="cargo_input" placeholder="Digite seu cargo..">
+                </label>
                     <label class="campos dir">
                     <span class="campo">CPF:</span>
                     <input type="email" id="cpf_input" maxlength="11" placeholder="Digite seu cpf..">
@@ -60,10 +64,6 @@
                 <label class="campos dir">
                     <span class="campo">Confirmar senha:</span>
                     <input type="password" id="confirmacao_senha_input" placeholder="Digite sua senha..">
-                </label>
-                <label class="campos dir">
-                    <span class="campo">Token:</span>
-                    <input type="text" id="token_input" maxlength="13" placeholder="Digite o token da empresa..">
                 </label>
                 <div class="conta">Já possui uma <a href="login.html">conta</a>?</div>
                 <button class="submit" onclick="cadastrar()">CADASTRAR</button>
@@ -88,20 +88,21 @@
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
     var nomeVar = nome_input.value;
+    var cargoVar = cargo_input.value;
     var cpfVar = cpf_input.value;
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
-    var confirmacaoSenhaVar = confirmacao_senha_input.value; 
-    var tokenVar = token_input.value; 
+    var confirmacaoSenhaVar = confirmacao_senha_input.value;
+    var idEmpresaVar = sessionStorage.ID_EMPRESA; 
 
     // Verificando se há algum campo em branco
     if (
       nomeVar == "" ||
+      cargoVar == "" ||
       cpfVar == "" ||
       emailVar == "" ||
       senhaVar == "" ||
-      confirmacaoSenhaVar == "" ||
-      tokenVar == ""
+      confirmacaoSenhaVar == "" 
     ) {
       cardErro.style.display = "block";
       /* mensagem_erro.innerHTML =
@@ -127,10 +128,11 @@
         // crie um atributo que recebe o valor recuperado aqui
         // Agora vá para o arquivo routes/usuario.js
         nomeServer: nomeVar,
+        cargoServer: cargoVar,
         cpfServer: cpfVar,
         emailServer: emailVar,
         senhaServer: senhaVar,
-        tokenServer: tokenVar,
+        idEmpresaServer: idEmpresaVar
       }),
     })
       .then(function (resposta) {
