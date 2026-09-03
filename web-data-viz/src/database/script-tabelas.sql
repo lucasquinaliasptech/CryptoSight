@@ -24,6 +24,7 @@ create table endereco(
 create table empresa(
 	id int auto_increment primary key,
     razao_social varchar(60),
+    senha varchar(255) not null,
     telefone char(11),
    	email varchar(70) not null unique,
     nome_fantasia varchar(50),
@@ -54,7 +55,7 @@ create table usuario (
 
 create table maquina (
     id int auto_increment primary key,
-    mac_adress char(17) not null unique,
+    mac_address char(17) not null unique,
     modelo varchar(50) not null,
     fabricante varchar(50) not null,
     tipo varchar(20) not null,
@@ -73,7 +74,8 @@ create table maquina_componente(
 	id int auto_increment primary key,
     id_maquina int,
     id_componente int,
-    limite double,
+    limite_max double,
+    limite_min double,
     monitorado bit,
      constraint fk_mc_maquina foreign key (id_maquina) references maquina(id),
      constraint fk_mc_componente foreign key (id_componente) references componente(id)
@@ -123,5 +125,5 @@ INSERT INTO uf (nome, sigla) VALUES
 ('Sergipe', 'SE'),
 ('Tocantins', 'TO');
 
-insert into empresa (razao_social, telefone, email, nome_fantasia, cnpj) values
-('cryptosight LTDA','11987654321', 'crypto@sight.com' ,'CryptoSight', 1234567891011);
+insert into empresa (razao_social, senha, telefone, email, nome_fantasia, cnpj) values
+('cryptosight LTDA','1234','11987654321', 'crypto@sight.com' ,'CryptoSight', 1234567891011);
