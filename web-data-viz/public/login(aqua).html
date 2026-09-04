@@ -84,7 +84,9 @@
 </html>
 
 <script>
-
+    function virar() {
+        cartao.style.transform = "rotateY(180deg)";
+    }
 
     function entrar() {
         aguardar();
@@ -98,9 +100,9 @@
             finalizarAguardar();
             return false;
         }
-        else {
+       /*  else {
             setInterval(sumirMensagem, 5000)
-        }
+        } */
 
         console.log("FORM LOGIN: ", emailVar);
         console.log("FORM SENHA: ", senhaVar);
@@ -150,8 +152,8 @@
         return false;
     }
 
-    function sumirMensagem() {
+/*     function sumirMensagem() {
         cardErro.style.display = "none"
-    }
+    } */
 
 </script>
