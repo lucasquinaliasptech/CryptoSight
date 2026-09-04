@@ -30,10 +30,11 @@
         <div class="direita">
             <div class="titulo" id="bvindo">Bem-vindo de volta</div>
             <div class="form">
+                <div id="mensagem"></div>
 
                 <label class="campos esq">
-                    <span class="campo">CNPJ:</span>
-                    <input type="text" id="cnpj_input" placeholder="Digite seu CNPJ..">
+                    <span class="campo">Email:</span>
+                    <input type="email" id="email_input" placeholder="Digite seu email..">
                 </label>
                 <label class="campos dir">
                     <span class="campo">Senha:</span>
@@ -52,38 +53,32 @@
 <script src="animations.js"></script>
 
 <script>
-    /*if (window.innerWidth <= 1024) {
-        function virar() {
-            gira.style.transform = "rotateY(180deg)";
-        }
-    }*/
+  if(window.innerWidth<=1024){
+  function virar() {
+    gira.style.transform = "rotateY(180deg)";
+  }
+}
 
     function entrar() {
-        /*    aguardar(); */
 
-        var cnpjVar = cnpj_input.value;
+        var emailVar = email_input.value;
         var senhaVar = senha_input.value;
 
-        if (cnpjVar == "" || senhaVar == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "Preencha todos os campos";
-            /*   finalizarAguardar(); */
+        if (emailVar == "" || senhaVar == "") {
+            mensagem.innerHTML = "Preencha todos os campos";
             return false;
         }
-        /*  else {
-             setInterval(sumirMensagem, 5000)
-         } */
 
-        console.log("FORM LOGIN: ", cnpjVar);
+        console.log("FORM LOGIN: ", emailVar);
         console.log("FORM SENHA: ", senhaVar);
 
-        fetch("/empresas/autenticar", {
+        fetch("/usuarios/autenticar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                cnpjServer: cnpjVar,
+                emailServer: emailVar,
                 senhaServer: senhaVar
             })
         }).then(function (resposta) {
@@ -95,24 +90,25 @@
                 resposta.json().then(json => {
                     console.log(json);
                     console.log(JSON.stringify(json));
-              
-                    sessionStorage.ID_EMPRESA = json.id;
-                    sessionStorage.CNPJ_EMPRESA = json.cnpj;
-                    sessionStorage.NOME_FANTASIA = json.nomeFantasia;
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
 
                     setTimeout(function () {
-                        window.location = "cadastro.html";
+                        window.location = "./dashboard/cards.html";
                     }, 1000); // apenas para exibir o loading
 
                 });
 
             } else {
 
+                mensagem.innerHTML = "E-mail ou senha inválidos";
+                
                 console.log("Houve um erro ao tentar realizar o login!");
 
                 resposta.text().then(texto => {
                     console.error(texto);
-                    /*       finalizarAguardar(texto); */
+          
                 });
             }
 
@@ -122,9 +118,5 @@
 
         return false;
     }
-    /* 
-        function sumirMensagem() {
-            cardErro.style.display = "none"
-        } */
 
 </script>

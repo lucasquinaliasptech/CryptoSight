@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +18,7 @@
 
   </div>
   <main id="gira">
-    <div class="esquerda">
+    <div class="esquerda" >
       <div class="seta" onclick="history.back()">
         <img src="./assets/imgs/seta.png" alt="">
       </div>
@@ -29,288 +28,122 @@
         <div class="crypto">CryptoSight</div>
       </div>
     </div>
-      <div class="direita">
-        <div class="titulo" id="titulo">Cadastre um novo usuário</div>
-        <div class="form">
-
-          <label class="campos esq">
-            <span class="campo">Razão social:</span>
-            <input id="razaoSocial_input" type="text" placeholder="Ex.: CryptoSight Tecnologia LTDA" />
-          </label>
-          <label class="campos dir">
-            <span class="campo">Telefone:</span>
-            <input id="telefone_input" type="text" placeholder="Digite o telefone da empresa" />
-          </label>
-          <label class="campos dir">
-            <span class="campo">E-mail:</span>
-            <input type="email" id="email_input" placeholder="Digite seu email..">
-          </label>
-          <label class="campos esq">
-            <span class="campo">Nome fantasia:</span>
-            <input id="nomeFantasia_input" type="text" placeholder="Ex.: CryptoSight" />
-          </label>
-          <label class="campos esq">
-            <span class="campo">CNPJ:</span>
-            <input id="cnpj_input" type="text" placeholder="Digite o CNPJ da empresa" />
-          </label>
-          <label class="campos esq">
-            <span class="campo">Senha:</span>
-            <input type="password" id="senha_input" placeholder="Digite sua senha..">
-          </label>
-          <label class="campos dir">
-            <span class="campo">Confirmar senha:</span>
-            <input type="password" id="confirmacao_senha_input" placeholder="Digite sua senha..">
-          </label>
-            <label class="campos dir">
-            <span class="campo">Cep:</span>
-            <input id="cep_input" type="text" placeholder="Digite o CEP" />
-          </label>
-          <label class="campos dir">
-            <span class="campo">Estado:</span>
-            <select id="uf_input">
-              <option value="">Selecione</option>
-            </select>
-          </label>
-          <label class="campos dir">
-            <span class="campo">Cidade:</span>
-            <input id="cidade_input" type="text" placeholder="Digite a Cidade" />
-          </label>
-          <label class="campos dir">
-            <span class="campo">Bairro:</span>
-            <input id="bairro_input" type="text" placeholder="Digite o Bairro" />
-          </label>
-          <label class="campos dir">
-            <span class="campo">Logadouro:</span>
-            <input id="logradouro_input" type="text" placeholder="Digite o Logradouro" />
-          </label>
-          <label class="campos dir">
-            <span class="campo">Numero:</span>
-             <input id="numero_input" type="text" placeholder="Digite o número" />
-          </label>
-          <label class="campos dir">
-            <span class="campo">Complemento:</span>
-            <input id="complemento_input" type="text" placeholder="Opcional" />
-          </label>
-          <label class="campos2 dir">
-            <span class="campo">Sede:</span>
-            <label>
-              <input id="sede_sim" type="radio" name="sede" value="1">
-              Sim
-            </label>
-            <label>
-              <input id="sede_nao" type="radio" name="sede" value="0">
-              Não
-            </label>
-          </label>
-          <div class="conta">Já possui uma <a href="login.html">conta</a>?</div>
-          <button class="submit" onclick="cadastrar()">CADASTRAR</button>
+        <div class="direita">
+            <div class="titulo" id="titulo">Cadastre um novo usuário</div>
+            <div class="form">
+              <div id="mensagem"></div>
+                <label class="campos esq">
+                    <span class="campo">Nome:</span>
+                    <input type="text" id="nome_input" placeholder="Digite seu nome..">
+                </label>
+                <label class="campos esq">
+                    <span>Cargo:</span>
+                    <select name="" id="cargo_input">
+                      <option value="">Selecione</option>
+                      <option value="Administrador">Administrador</option>
+                      <option value="UsuarioComum">Usuário Padrão</option>
+                    </select>
+                </label>
+                    <label class="campos dir">
+                    <span class="campo">CPF:</span>
+                    <input type="email" id="cpf_input"  placeholder="Digite seu cpf.." maxlength="11">
+                </label>
+                <label class="campos dir">
+                    <span class="campo">Email:</span>
+                    <input type="email" id="email_input" placeholder="Digite seu email..">
+                </label>
+                <label class="campos esq">
+                    <span class="campo">Senha:</span>
+                    <input type="password" id="senha_input" placeholder="Digite sua senha..">
+                </label>
+                <label class="campos dir">
+                    <span class="campo">Confirmar senha:</span>
+                    <input type="password" id="confirmacao_senha_input" placeholder="Digite sua senha..">
+                </label>
+                <div class="conta">Já possui uma <a href="login.html">conta</a>?</div>
+                <button class="submit" onclick="cadastrar()">CADASTRAR</button>
+            </div>
         </div>
-      </div>
-    </main>
 </body>
 
 </html>
 
 <script src="animations.js"></script>
-<script>
 
-  function cadastrarEmpresa() {
-   
-    var razaoSocialVar = razaoSocial_input.value;
-    var telefoneVar = telefone_input.value;
+<script>
+  if(window.innerWidth<=1024){
+  function virar() {
+    gira.style.transform = "rotateY(180deg)";
+  }
+}
+  function cadastrar() {
+    
+    var nomeVar = nome_input.value;
+    var cargoVar = cargo_input.value;
+    var cpfVar = cpf_input.value;
     var emailVar = email_input.value;
-    var nomeFantasiaVar = nomeFantasia_input.value;
-    var cnpjVar = cnpj_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
+    var idEmpresaVar = sessionStorage.ID_EMPRESA; 
 
-    var cepVar = cep_input.value;
-    var ufVar = uf_input.value;
-    var cidadeVar = cidade_input.value;
-    var bairroVar = bairro_input.value;
-    var logradouroVar = logradouro_input.value;
-    var numeroVar = numero_input.value;
-    var complementoVar = complemento_input.value;
-    var sedeVar;
-
-    let indice_ponto_com = emailVar.indexOf(".com");
-    let indice_arroba = emailVar.indexOf("@");
-    let arroba_antes_ponto_com = indice_arroba < indice_ponto_com - 1;
-    let termina_em_ponto_com = emailVar.endsWith(".com");
-
-    if (sede_sim.checked) {
-      sedeVar = 1;
-    } else if (sede_nao.checked) {
-      sedeVar = 0;
-    }
-
-
-    // Verificando se há algum campo em branco
+    
     if (
-      razaoSocialVar.trim() == "" ||
-      telefoneVar.trim() == "" ||
+      nomeVar.trim() == "" ||
+      cargoVar.trim() == "" ||
+      cpfVar.trim() == "" ||
       emailVar.trim() == "" ||
-      nomeFantasiaVar.trim() == "" ||
-      cnpjVar.trim() == "" ||
       senhaVar.trim() == "" ||
-      confirmacaoSenhaVar.trim() == "" ||
-      cepVar.trim() == "" ||
-      ufVar.trim() == "" ||
-      cidadeVar.trim() == "" ||
-      bairroVar.trim() == "" ||
-      logradouroVar.trim() == "" ||
-      numeroVar.trim() == ""
+      confirmacaoSenhaVar.trim() == "" 
     ) {
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML = "Preencha todos s campos obrigatórios ";
+      
+      mensagem.innerHTML = "Preencha todos os campos"
+      return false;
+    } 
+    if(cpfVar.lengh != 11) {
 
-      finalizarAguardar();
-      return;
+      mensagem.innerHTML = "CPF precisa ter 11 caracteres"
+      return false;
+    }
+    if(senhaVar != confirmacaoSenhaVar){
 
-    } else if (razaoSocialVar.trim().length < 5) {
-
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML = "Razão Social deve possuir no mínimo 5 caracteres";
-
-      return;
-
-    } else if (telefoneVar.length != 11 || isNaN(telefoneVar)) {
-
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML = "Telefone inválido";
-      return;
-
-    } else if (!(arroba_antes_ponto_com &&
-      indice_arroba > -1 &&
-      indice_ponto_com > -1 &&
-      termina_em_ponto_com)) {
-
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML = "Email inválido";
-      return;
-
-    } else if (nomeFantasiaVar.trim().length < 3) {
-
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML = "Nome Fantasia deve possuir no mínimo 3 caracteres";
-      return;
-
-    } else if (cnpjVar.length != 14 || isNaN(cnpjVar)) {
-
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML = "CNPJ inválido";
-      return;
-
-    } else if (senhaVar.length < 6) {
-
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML = "Senha inválida: Mínimo 6 caracteres";
-      return;
-
-    } else if (senhaVar != confirmacaoSenhaVar) {
-
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML = "As senhas precisam estar iguais";
-      return;
-
-    } else if (cepVar.length != 8 || isNaN(cepVar)) {
-
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML = "CEP inválido";
-      return;
-
-    } else if (!sede_sim.checked && !sede_nao.checked) {
-
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML = "Selecione se o endereço é sede ou não.";
-      return;
-
+        mensagem.innerHTML = "Confirmação de senha falhou"
+        return false;
     }
 
-    // Enviando o valor da nova input
-    fetch("/empresas/cadastrar", {
+    fetch("/usuarios/cadastrar", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        // crie um atributo que recebe o valor recuperado aqui
-        // Agora vá para o arquivo routes/usuario.js
-        razaoSocial: razaoSocialVar,
-        telefone: telefoneVar,
-        email: emailVar,
-        nomeFantasia: nomeFantasiaVar,
-        cnpj: cnpjVar,
-        senha: senhaVar,
-
-        cep: cepVar,
-        uf: ufVar,
-        cidade: cidadeVar,
-        bairro: bairroVar,
-        logradouro: logradouroVar,
-        numero: numeroVar,
-        complemento: complementoVar,
-        sede: sedeVar
-
+   
+        nomeServer: nomeVar,
+        cargoServer: cargoVar,
+        cpfServer: cpfVar,
+        emailServer: emailVar,
+        senhaServer: senhaVar,
+        idEmpresaServer: idEmpresaVar
       }),
     })
       .then(function (resposta) {
-
         console.log("resposta: ", resposta);
 
         if (resposta.ok) {
-
-          cardErro.style.display = "block";
-
-          mensagem_erro.innerHTML =
-            "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-
+     
           setTimeout(() => {
-            window.location = "loginEmpresa.html";
-          }, 2000);
-
+            window.location = "login.html";
+          }, "2000");
 
         } else {
-
-          return resposta.json().then(function (dados) {
-
-            cardErro.style.display = "block";
-            mensagem_erro.innerHTML = dados.mensagem;
-
-          });
-
+          throw "Houve um erro ao tentar realizar o cadastro!";
         }
-
       })
-      .catch(function (erro) {
-
-        console.log(`#ERRO: ${erro}`);
-        finalizarAguardar();
-
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
       });
 
     return false;
   }
 
-  function listar() {
-    fetch("/ufs/listarEstados", {
-      method: "GET",
-    })
-      .then(function (resposta) {
-        resposta.json().then((ufs) => {
-          ufs.forEach((uf) => {
 
-            uf_input.innerHTML += ` <option value="${uf.id}">${uf.nome} - ${uf.sigla}</option>`;
-
-          });
-        });
-      })
-      .catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-      });
-  }
-
-  function sumirMensagem() {
-    cardErro.style.display = "none";
-  }
 </script>

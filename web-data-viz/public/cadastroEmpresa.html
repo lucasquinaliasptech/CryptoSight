@@ -1,155 +1,120 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>AquaTech | Cadastro Empresa</title>
-
-  <script src="./js/sessao.js"></script>
-
-  <!-- <link rel="stylesheet" href="./css/estilo.css" /> -->
-  <link rel="icon" href="./assets/icon/favicon2.ico" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/cadstyle.css">
+  <link rel="icon" href="./assets/imgs/ChatGPT_Image_11_de_ago._de_2026__13_30_37-removebg-preview(1) 2.png">
+  <title>Cadastro</title>
 </head>
 
-<body onload="listar()">
-  <!--header inicio-->
-  <div class="header">
-    <div class="container">
-      <h1 class="titulo">AquaTech</h1>
-      <ul class="navbar">
-        <li>
-          <a href="index.html">Inicial</a>
-        </li>
-        <li>
-          <a href="simulador.html">Simulador</a>
-        </li>
-        <li>|</li>
-        <li>
-          <a href="login.html">Login</a>
-        </li>
-        <li class="agora">
-          <a href="#">Cadastro</a>
-        </li>
-      </ul>
+<body>
+  <div class="quadrados">
+    <div class="union">
+      <img src="./assets/imgs/Union.png" alt="" class="union-normal">
+      <img src="./assets/imgs/union-bright.png" alt="" class="union-bright">
     </div>
-  </div>
-  <!--header fim-->
 
-  <div class="login">
-    <div class="alerta_erro">
-      <div class="card_erro" id="cardErro">
-        <span id="mensagem_erro"></span>
+  </div>
+  <main id="gira">
+    <div class="esquerda">
+      <div class="seta" onclick="history.back()">
+        <img src="./assets/imgs/seta.png" alt="">
+      </div>
+      <div class="logo" onclick="virar()">
+        <img src="./assets/imgs/ChatGPT_Image_11_de_ago._de_2026__13_30_37-removebg-preview(1) 2.png" alt=""
+          class="icone">
+        <div class="crypto">CryptoSight</div>
       </div>
     </div>
-    <div class="container">
-      <div class="card card-cadastro">
-        <h2>Bem-vindo!</h2>
-        <div class="formulario">
-          <!--
-                         Para inserir mais um campo, copie uma das inputs abaixo.
-                         Assim que inserir vá para o script abaixo.
-                     -->
-          <div class="campo">
-            <span>Razão social:</span>
+      <div class="direita">
+        <div class="titulo" id="titulo">Cadastre sua Empresa</div>
+        <div class="form">
+
+          <label class="campos esq">
+            <span class="campo">Razão social:</span>
             <input id="razaoSocial_input" type="text" placeholder="Ex.: CryptoSight Tecnologia LTDA" />
-          </div>
-          <div class="campo">
-            <span>Telefone:</span>
+          </label>
+          <label class="campos dir">
+            <span class="campo">Telefone:</span>
             <input id="telefone_input" type="text" placeholder="Digite o telefone da empresa" />
-          </div>
-          <div class="campo">
-            <span>E-mail:</span>
-            <input id="email_input" type="text" placeholder="Digite o E-mail da empresa" />
-          </div>
-          <div class="campo">
-            <span>Nome fantasia:</span>
+          </label>
+          <label class="campos dir">
+            <span class="campo">E-mail:</span>
+            <input type="email" id="email_input" placeholder="Digite seu email..">
+          </label>
+          <label class="campos esq">
+            <span class="campo">Nome fantasia:</span>
             <input id="nomeFantasia_input" type="text" placeholder="Ex.: CryptoSight" />
-          </div>
-          <div class="campo">
-            <span>CNPJ:</span>
+          </label>
+          <label class="campos esq">
+            <span class="campo">CNPJ:</span>
             <input id="cnpj_input" type="text" placeholder="Digite o CNPJ da empresa" />
-          </div>
-          <div class="campo">
-            <span>Senha:</span>
-            <input id="senha_input" type="password" placeholder="******" />
-          </div>
-          <div class="campo">
-            <span>Confirmação da Senha:</span>
-            <input id="confirmacao_senha_input" type="password" placeholder="******" />
-          </div>
-          <div class="campo">
-            <span>Cep:</span>
+          </label>
+          <label class="campos esq">
+            <span class="campo">Senha:</span>
+            <input type="password" id="senha_input" placeholder="Digite sua senha..">
+          </label>
+          <label class="campos dir">
+            <span class="campo">Confirmar senha:</span>
+            <input type="password" id="confirmacao_senha_input" placeholder="Digite sua senha..">
+          </label>
+            <label class="campos dir">
+            <span class="campo">Cep:</span>
             <input id="cep_input" type="text" placeholder="Digite o CEP" />
-          </div>
-          <div class="campo">
-            <span>Estado:</span>
+          </label>
+          <label class="campos dir">
+            <span class="campo">Estado:</span>
             <select id="uf_input">
               <option value="">Selecione</option>
             </select>
-          </div>
-          <div class="campo">
-            <span>Cidade:</span>
+          </label>
+          <label class="campos dir">
+            <span class="campo">Cidade:</span>
             <input id="cidade_input" type="text" placeholder="Digite a Cidade" />
-          </div>
-          <div class="campo">
-            <span>Bairro:</span>
+          </label>
+          <label class="campos dir">
+            <span class="campo">Bairro:</span>
             <input id="bairro_input" type="text" placeholder="Digite o Bairro" />
-          </div>
-          <div class="campo">
-            <span>Logradouro:</span>
+          </label>
+          <label class="campos dir">
+            <span class="campo">Logadouro:</span>
             <input id="logradouro_input" type="text" placeholder="Digite o Logradouro" />
-          </div>
-          <div class="campo">
-            <span>Numero:</span>
-            <input id="numero_input" type="text" placeholder="Digite o número" />
-          </div>
-          <div class="campo">
-            <span>Complemento:</span>
+          </label>
+          <label class="campos dir">
+            <span class="campo">Numero:</span>
+             <input id="numero_input" type="text" placeholder="Digite o número" />
+          </label>
+          <label class="campos dir">
+            <span class="campo">Complemento:</span>
             <input id="complemento_input" type="text" placeholder="Opcional" />
-          </div>
-          <div class="campo">
-            <span>Sede:</span>
+          </label>
+          <label class="campos2 dir">
+            <span class="campo">Sede:</span>
             <label>
               <input id="sede_sim" type="radio" name="sede" value="1">
               Sim
             </label>
-
             <label>
               <input id="sede_nao" type="radio" name="sede" value="0">
               Não
             </label>
-          </div>
-          <button class="botao" onclick="cadastrarEmpresa()">Cadastrar</button>
+          </label>
+          <div class="conta">Já possui uma <a href="login.html">conta</a>?</div>
+          <button class="submit" onclick="cadastrar()">CADASTRAR</button>
         </div>
-
-        <div id="div_erros_login"></div>
       </div>
-    </div>
-  </div>
-
-  <!--footer inicio-->
-  <div class="footer">
-    <div class="container">
-      <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023</h4>
-      <span class="version">v1.0.0</span>
-    </div>
-  </div>
-  <!--footer fim-->
+    </main>
 </body>
 
 </html>
 
+<script src="animations.js"></script>
 <script>
 
   function cadastrarEmpresa() {
-    // aguardar();
-
-    //Recupere o valor da nova input pelo nome do id
-    // Agora vá para o método fetch logo abaixo
+   
     var razaoSocialVar = razaoSocial_input.value;
     var telefoneVar = telefone_input.value;
     var emailVar = email_input.value;
@@ -196,25 +161,23 @@
       numeroVar.trim() == ""
     ) {
       cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "Preencha todos s campos obrigatórios ";
+      mensagem_erro.innerHTML = "Preencha todos s campos obrigatórios ";
 
       finalizarAguardar();
-      return false;
+      return;
 
     } else if (razaoSocialVar.trim().length < 5) {
 
       cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "Razão Social deve possuir no mínimo 5 caracteres";
-      return false;
+      mensagem_erro.innerHTML = "Razão Social deve possuir no mínimo 5 caracteres";
+
+      return;
 
     } else if (telefoneVar.length != 11 || isNaN(telefoneVar)) {
 
       cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "Telefone inválido";
-      return false;
+      mensagem_erro.innerHTML = "Telefone inválido";
+      return;
 
     } else if (!(arroba_antes_ponto_com &&
       indice_arroba > -1 &&
@@ -222,51 +185,44 @@
       termina_em_ponto_com)) {
 
       cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "Email inválido";
-      return false;
+      mensagem_erro.innerHTML = "Email inválido";
+      return;
 
     } else if (nomeFantasiaVar.trim().length < 3) {
 
       cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "Nome Fantasia deve possuir no mínimo 3 caracteres";
-      return false;
+      mensagem_erro.innerHTML = "Nome Fantasia deve possuir no mínimo 3 caracteres";
+      return;
 
     } else if (cnpjVar.length != 14 || isNaN(cnpjVar)) {
 
       cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "CNPJ inválido";
-      return false;
+      mensagem_erro.innerHTML = "CNPJ inválido";
+      return;
 
     } else if (senhaVar.length < 6) {
 
       cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "Senha inválida: Mínimo 6 caracteres";
-      return false;
+      mensagem_erro.innerHTML = "Senha inválida: Mínimo 6 caracteres";
+      return;
 
     } else if (senhaVar != confirmacaoSenhaVar) {
 
       cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "As senhas precisam estar iguais";
-      return false;
+      mensagem_erro.innerHTML = "As senhas precisam estar iguais";
+      return;
 
     } else if (cepVar.length != 8 || isNaN(cepVar)) {
 
       cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "CEP inválido";
-      return false;
+      mensagem_erro.innerHTML = "CEP inválido";
+      return;
 
     } else if (!sede_sim.checked && !sede_nao.checked) {
 
       cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "Selecione se o endereço é sede ou não.";
-      return false;
+      mensagem_erro.innerHTML = "Selecione se o endereço é sede ou não.";
+      return;
 
     }
 
@@ -309,11 +265,9 @@
             "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 
           setTimeout(() => {
-            window.location = "login.html";
+            window.location = "loginEmpresa.html";
           }, 2000);
 
-          limparFormulario();
-          finalizarAguardar();
 
         } else {
 
