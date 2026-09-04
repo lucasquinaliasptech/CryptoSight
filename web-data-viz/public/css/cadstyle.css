@@ -5,6 +5,7 @@
 }
 
 body{
+    overflow: hidden;
     min-height: 100vh;
     background-color: #1F1F1F;
     background-image: url(../assets/imgs/blur.png);
@@ -101,7 +102,7 @@ main{
 
         font-family: 'manrope';
         font-weight: 800;
-        font-size: 48px;
+        font-size: 3rem;
         color: white;
         animation: surgir .35s;
     }
@@ -111,27 +112,42 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+    padding: 5vh 0;
     justify-content: center;
+    
     .titulo{
         font-family: 'manrope';
-        font-size: 48px;
+        font-size: 3rem;
         font-weight: 800;
         color: white;
         animation: surgir .5s;
+        margin-bottom: 20px;
     }
     #bvindo{
         font-size: 64px;
     }
 }
 
+
+
+#titulo{
+    padding-bottom: 4vh;
+}
+.form::-webkit-scrollbar {
+    display: none;
+}
+
 .form{
-    padding-top: 4vh;
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 70vh;
-    gap: 2.7vh;
+    height: 75vh;
+    gap: 1.6vh;
+    padding-bottom: 5vh;
 }
 
 .campos{
@@ -141,7 +157,7 @@ main{
     font-size: 20px;
     font-weight: 800;
     color: white;
-    gap: 0.7vh;
+    gap: 1vh;
     .campo{
         padding-left: 1vw;
     }
@@ -151,7 +167,7 @@ main{
         border:2px solid #207F70 ;
         border-radius: 18px;
         background-color: #1F1F1F;
-        height: 8vh;
+        height: 6.5vh;
         width: 35vw;
         font-family: 'manrope';
         font-size: 20px;
@@ -162,8 +178,35 @@ main{
         transition: .1s ease-in-out;
         transform: scale(1.03);
     }
+    select{
+        padding-left: 1vw;
+        outline: none;
+        border:2px solid #207F70 ;
+        border-radius: 18px;
+        background-color: #1F1F1F;
+        height: 6.5vh;
+        width: 35vw;
+        font-family: 'manrope';
+        font-size: 20px;
+        font-weight: 800;
+        color: white;
+    }
+    select:focus{
+        transition: .1s ease-in-out;
+        transform: scale(1.03);
+    }
 }
-
+.campos2{
+    display: flex;
+    font-family: 'manrope';
+    font-size: 20px;
+    font-weight: 800;
+    color: white;
+    gap: 0.5vh;
+    .campo{
+        padding-left: 1vw;
+    }
+}
 .dir{
     animation: daDireita .4s ease-in-out;
 }
@@ -171,6 +214,7 @@ main{
 .esq{
     animation: daEsquerda .4s ease-in-out;
 }
+
 
 .conta{
     font-family: 'manrope';
@@ -183,7 +227,6 @@ main{
 
 .submit{
     font-family: 'inter';
-    margin-top: 2vh;
     font-size: 28px;
     font-weight: 700;
     padding: 2vh 2vw;
@@ -192,6 +235,7 @@ main{
     color: white;
     background: linear-gradient(45deg, #207F70, #00E6A6);
     animation: surgir .7s ease-in;
+
 }
 
 .submit:hover{
@@ -200,7 +244,9 @@ main{
     transform: scale(1.05);
     box-shadow: 0 0 5px 0.5px #00E6A6;
 }
-
+#bvindo {
+    font-size: 50px;
+}
 /* Animações */
 
 @keyframes surgir {
@@ -262,7 +308,10 @@ main{
     70%{opacity: 1;}
     100%{opacity: 1;}
 }
-
+@keyframes girar{
+    from{transform: rotateY('0deg');}
+    to{transform: rotateY('180deg');}
+}
 /* Fonts */
 
 @font-face {
@@ -274,3 +323,53 @@ main{
     font-family: 'inter';
     src: url(../assets/fonts/Inter-VariableFont_opsz\,wght.ttf);
 }
+    
+    @media screen and (max-width:1024px){
+    main::-webkit-scrollbar {
+        display: none;
+    }
+
+    main{
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        overflow: scroll;
+        display: flex;
+        flex-direction: column;
+        }
+    .quadrados{
+            display: none;
+        }
+
+    }
+    /*@media screen and (max-width:430px){
+        main{
+            display: flex;
+            flex-direction: column;
+            position: relative;
+
+            transform-style: preserve-3d;
+            transition: transform 0.8s ease;
+            align-items: center;
+            
+        }
+    
+        .esquerda{
+            position: absolute;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .logo{
+            z-index: 99;
+        }
+        .direita{
+            padding-left: 75px;
+            position: absolute;
+            backface-visibility: hidden;
+            transform: rotateY(180deg);
+            display: flex;
+            justify-items: center;
+            
+        }
+    }*/

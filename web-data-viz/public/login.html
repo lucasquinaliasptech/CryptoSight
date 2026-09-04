@@ -1,121 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/cadstyle.css">
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" href="./assets/imgs/ChatGPT_Image_11_de_ago._de_2026__13_30_37-removebg-preview(1) 2.png">
-    <title>Login</title>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@4.1.0/dist/model-viewer.min.js">
+    </script>
+    <title>Home</title>
 </head>
+
 <body>
-    <div class="quadrados">
-    <div class="union">
-    <img src="./assets/imgs/Union.png" alt="" class="union-normal">
-    <img src="./assets/imgs/union-bright.png" alt="" class="union-bright">
-    </div>
-    </div>
-    <main>
-        <div class="esquerda">
-        <div class="seta" onclick="history.back()">
-            <img src="./assets/imgs/seta.png" alt="">
-        </div>
-        <div class="logo">
-            <img src="./assets/imgs/ChatGPT_Image_11_de_ago._de_2026__13_30_37-removebg-preview(1) 2.png" alt="" class="icone">
-            <div class="crypto">CryptoSight</div>
-        </div>
-        </div>
-        <div class="direita">
-            <div class="titulo" id="bvindo">Bem-vindo de volta</div>
-            <div class="form">
-              
-                <label class="campos esq">
-                    <span class="campo">Email:</span>
-                    <input type="email" id="email_input" placeholder="Digite seu email..">
-                </label>
-                <label class="campos dir">
-                    <span class="campo">Senha:</span>
-                    <input type="password" id="senha_input" placeholder="Digite sua senha..">
-                </label>
-                <div class="conta">Ainda não possui uma <a href="cadastro.html">conta</a>?</div>
-              
-                <button class="submit" onclick="entrar()">ENTRAR</button>
+    <header>
+        <div class="bolha hover1" id="b1"></div>
+        <div class="bolha hover2" id="b2"></div>
+        <div class="bolha hover3" id="b3"></div>
+        <div class="quadrados">
+            <div class="union">
+                <img src="./assets/imgs/Union2.png" alt="" class="union-normal">
+                <img src="./assets/imgs/Union2-bright.png" alt="" class="union-bright">
             </div>
         </div>
+        <div class="esquerdaH">
+            <div class="logo">
+                <img src="./assets/imgs/ChatGPT_Image_11_de_ago._de_2026__13_30_37-removebg-preview(1) 2.png" alt="" class="icone">
+                <div class="crypto">CryptoSight</div>
+            </div>
+            <div class="slogan">
+                Sua <span class="sloganGradiente">mineração</span> com o <span class="sloganGradiente">melhor
+                    monitoramento</span>
+            </div>
+        </div>
+        <div class="direitaH"><a class="btnJuntar" href="./cadastro.html"><button
+                    class="juntar hover">Juntar-se</button></a></div>
+        <nav class="navbar">
+            <ul class="nav-itens">
+                <li class="secoes"><a href="">Home</a></li>
+                <li class="secoes"><a href="#segunda">Sobre nós</a></li>
+                <li class="secoes"><a href="#quarta">Solução</a></li>
+                <li class="secoes"><a href="#quinta">Como funciona</a></li>
+                <li class="secoes"><a href="#sexta">Monitoramento</a></li>
+            </ul>
+        </nav>
+        <a href="./login.html" class="btnLogin"><button class="login">Login</button></a>
+    </header>
+    <main>
+        <section id="primeira" class="primeira">
+            <div class="entender">
+                <div class="textoEntender">
+                    <h1 class="titulo">Antes de monitorar, é preciso entender</h1>
+                    <div class="oqe">A <span class="oqeGradiente">mineração de criptomoedas</span> é o processo de usar
+                        o <span class="oqeGradiente">poder computacional</span> para <span class="oqeGradiente">validar
+                            transações</span>, proteger a rede e <span class="oqeGradiente">criar blocos</span> em uma
+                        <a class="oqeGradiente" href="#blockchain">blockchain.</a> Os mineradores competem para resolver
+                        <span class="oqeGradiente">quebra-cabeças matemáticos complexos</span>, e o primeiro a ter
+                        sucesso adiciona o próximo bloco ao <a class="oqeGradiente" href="#blockchain">blockchain</a> e
+                        recebe<span class="oqeGradiente"> recompensas em criptomoeda</span>. A mineração de criptomoedas
+                        é um <span class="oqeGradiente">trabalho essencial</span> para que as transações com moedas
+                        digitais sejam validadas de forma <span class="oqeGradiente">segura</span>.
+                    </div>
+                </div>
+            </div>
+            <div class="metodos">
+                <div class="tituloMetodos">Existem 2 formas de minerar:</div>
+                <div class="proofs">
+                    <div class="pow">
+                        <div class="pow-conteudo">
+                            <div class="powTitle">POW</div>
+                            <div class="powDescricao">Nosso foco com essa solução é o PoW, já que exige poder
+                                computacional avançado e eletricidade, método no qual um ou vários computadores executam
+                                cálculos repetitivos em busca do hash no bloco que estão inseridos, com o intuito de
+                                acoplar outro bloco à <a class="oqeGradiente" href="#blockchain">blockchain.</a></div>
+                        </div>
+                    </div>
+                    <div class="cards-proofs">
+                        <div class="posTitle">POS</div>
+                        <div class="posDescricao">A participação na validação está relacionada ao stake (ativos
+                            depositados/bloqueados) e ao mecanismo específico da <a class="oqeGradiente"
+                                href="#blockchain">blockchain</a>, ou seja utiliza de um capital inicial dos usuários
+                            como uma garantia para serem elegíveis como um intermediário na validação de transações,
+                            garantindo a veracidade da transação. </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="segunda" id="blockchain">
+            <h1 class="block">BLOCKCHAIN</h1>
+            <div class="card-block"><span class="oqueE">O que é?</span><br>
+                <p>É uma infraestrutura que atua como um banco de dados descentralizado, distribuído e imutável,
+                    conectado a vários computadores, tornando-o resistente a adulterações. Registra transações em bloco,
+                    onde cada bloco se conecta um com o outro de maneira cronológica e segura, que permite o registro de
+                    transações e rastreamentos de ativos. É a base para garantir a integridade de moedas digitais, como
+                    Bitcoin e Ethereum.<br><br></p><span class="oqueE">Como funciona o bloco?</span> <br>
+                <p>Os blocos são informações sobre as atividades realizadas em uma blockchain. São separados em duas
+                    partes principais: o corpo e o cabeçalho do bloco, que é responsável pela segurança, validação e
+                    conexão cronológica do dado, trazendo hash do bloco anterior, raíz de merkle que representa
+                    matematicamente as transações daquele bloco, o momento exato do registro do bloco, a versão do bloco
+                    ou do protocolo da blockchain e o identificador de dificuldade para determinar o quão difícil é
+                    encontrar o hash correto para o bloco naquele momento da rede. Já o corpo foca no armazenamento dos
+                    dados, contendo a lista de transações válidas e verificadas que ocorreram no período de criação do
+                    bloco, endereços e chaves públicas das carteiras de origem e destino de cada operação, quantidade de
+                    moedas ou tokens movimentados (valores) e as taxas de transação.</p>  
+            </div>
+            <div class="funcionamento">
+                <div class="imgs">
+                    <img class="blockchainImg" src="./assets/imgs/blockchain.png" alt="">
+                </div>
+            </div>
+        </section>
+        <section id="terceira">
+            <h1 class="tituloT">PROBLEMAS</h1>
+            <div class="cartoes-problemas diagnostico">
+                <h2 class="titulo-problema">Diagnóstico do sistema</h2>
+                <p class="desc-problema">Em ambientes com múltiplos equipamentos, não há uma forma unificada de
+                    acompanhar métricas de CPU, GPU, memória, armazenamento, rede e disponibilidade, o que dificulta a
+                    identificação rápida da origem de um problema quando ele ocorre.</p>
+            </div>
+            <div class="cartoes-problemas identificacao">
+                <h2 class="titulo-problema">Identificação tardia</h2>
+                <p class="desc-problema">Sem um monitoramento contínuo, irregularidades como queda de hashrate,
+                    superaquecimento ou perda de conexão só são percebidas depois que já geraram impacto na operação,
+                    resultando em perda de desempenho e redução direta dos ganhos com a mineração.</p>
+            </div>
+            <div class="cartoes-problemas energetico">
+                <h2 class="titulo-problema">Consumo energético demasiado</h2>
+                <p class="desc-problema">A ausência de métricas organizadas impede que o responsável pela operação
+                    identifique componentes com consumo desbalanceado ou baixo rendimento, dificultando decisões que
+                    poderiam reduzir custos e melhorar a eficiência da infraestrutura.</p>
+            </div>
+        </section>
+        <section id="quarta">
+            <h1 class="tituloSolus">Nossas soluções</h1>
+            <div class="solucoes">
+                <div class="solucao">
+                    <div class="textoSolu">
+                        <div class="tituloSolu">Monitore</div>
+                        <div class="descricaoSolu">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
+                            quisquam nulla excepturi rem fugiat, facere distinctio quia cum, doloribus officiis ratione
+                            corporis pariatur asperiores architecto sapiente ipsum numquam quo deserunt?</div>
+                    </div>
+                    <img src="./assets/imgs/grafico.png" alt="">
+                </div>
+                <div class="solucao" id="detec">
+                    <img src="./assets/imgs/alerta.jpg" alt="">
+                    <div class="textoSolu">
+                        <div class="tituloSolu">Detecte</div>
+                        <div class="descricaoSolu">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos veniam
+                            officiis debitis nemo sit consectetur distinctio soluta fuga corporis voluptatibus,
+                            asperiores quidem voluptate nostrum molestiae. Nobis iste nulla provident sapiente.</div>
+                    </div>
+                </div>
+                <div class="solucao">
+                    <div class="textoSolu">
+                        <div class="tituloSolu">Aja</div>
+                        <div class="descricaoSolu">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia
+                            fuga a atque repudiandae. Molestiae, incidunt. Quibusdam, ipsum incidunt corporis ducimus
+                            commodi quisquam ex animi doloremque nisi. Aspernatur sunt ad corrupti?</div>
+                    </div>
+                    <img src="./assets/imgs/manutencao.png" alt="">
+                </div>
+            </div>
+        </section>
+        <section id="quinta">
+            <h1 class="titulomaquina tituloAsic ativo">Conheça o <span class="asicT">Asic</span></h1>
+            <h1 class="titulomaquina tituloGPU">Conheça a <span class="asicT">GPU</span></h1>
+            <h1 class="titulomaquina tituloRig">Conheça o <span class="asicT">MiningRig</span></h1>
+            <div class="maquinas">
+                <div class="gradiente"></div>
+                <div class="maquina">
+                    <div class="maquinaDescricao descAsic ativo">Um ASIC Miner é um equipamento desenvolvido
+                        especificamente para realizar os cálculos necessários para a mineração de Bitcoin. Ele possui
+                        chips especializados que oferecem alto desempenho e eficiência para executar o algoritmo de
+                        mineração, sendo uma das principais opções utilizadas na mineração profissional.</div>
+                    <div class="maquinaDescricao descGPU">Uma GPU (Graphics Processing Unit) é um processador
+                        originalmente desenvolvido para trabalhar com gráficos, mas que também pode realizar muitos
+                        cálculos simultaneamente. Na mineração, várias GPUs podem ser utilizadas em conjunto para
+                        executar os cálculos necessários, formando uma alternativa mais flexível aos ASICs.</div>
+                    <div class="maquinaDescricao descRig">Um Mining Rig é uma estrutura montada com vários componentes
+                        de hardware, geralmente várias GPUs, fonte de alimentação, placa-mãe e sistema de refrigeração,
+                        para realizar mineração de criptomoedas. O conjunto precisa ser monitorado para acompanhar
+                        fatores como temperatura, consumo de energia e desempenho dos componentes.</div>
+                    <div class="escolha">
+                        <div class="escolher asicMiner selecionado">Asic</div>
+                        <div class="escolher gpu">GPU</div>
+                        <div class="escolher minerig">Mining Rig</div>
+                    </div>
+                </div>
+                <model-viewer class="asic3d ativo" src="./assets/tresD/ant_miner_s19_pro.glb" camera-controls
+                    auto-rotate shadow-intensity="1">
+                </model-viewer>
+                <model-viewer class="gpu3d" src="./assets/tresD/rx_480_gpu.glb" camera-controls auto-rotate
+                    shadow-intensity="1">
+                </model-viewer>
+                <model-viewer class="minerig3d" src="./assets/tresD/mining_rig.glb" camera-controls auto-rotate
+                    shadow-intensity="1">
+                </model-viewer>
+            </div>
+        </section>
+
+        <section id="sexta">
+            <h1 class="sexta-titulo">O QUE MONITORAMOS?</h1>
+            <div class="sexta-desc">
+                Quais são as métricas que mostramos para você em sua aplicação?
+            </div>
+            <div class="grid-cards">
+                <div class="cards-metricas" style="--clr:#32c4ae;">
+                    <h3 class="titulo-card">Temperatura</h3>
+                    <div class="descricao-card">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis
+                        dolor deserunt ab excepturi. Soluta deserunt tenetur architecto veniam, quibusdam voluptas
+                        deleniti impedit rerum necessitatibus ullam ad perferendis illo, doloribus nisi!</div>
+                </div>
+                <div class="cards-metricas" style="--clr:#32c4ae;">
+                    <h3 class="titulo-card">Temperatura</h3>
+                    <div class="descricao-card">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error tempore
+                        quod vero at? Veritatis rerum porro ea, doloremque, dolore, praesentium voluptatem labore
+                        eveniet minima quisquam recusandae assumenda! Beatae, dignissimos ullam!</div>
+                </div>
+                <div class="cards-metricas" style="--clr:#32c4ae;">
+                    <h3 class="titulo-card">Temperatura</h3>
+                    <div class="descricao-card">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
+                        neque ipsum optio iure, adipisci ab architecto commodi quam rem voluptatum odit. Ex dolor
+                        maiores suscipit placeat facere doloribus magnam quibusdam!</div>
+                </div>
+                <div class="cards-metricas" style="--clr:#32c4ae;">
+                    <h3 class="titulo-card">Temperatura</h3>
+                    <div class="descricao-card">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque laborum
+                        explicabo at, ducimus unde ullam, amet nisi pariatur voluptate exercitationem iure molestiae
+                        nobis ipsa. Deleniti quo amet repellendus tempore doloribus.</div>
+                </div>
+                <div class="cards-metricas" style="--clr:#32c4ae;">
+                    <h3 class="titulo-card">Temperatura</h3>
+                    <div class="descricao-card">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, cumque
+                        quam similique nam praesentium obcaecati beatae accusamus tenetur blanditiis laudantium dolorem.
+                        Repellat voluptates reprehenderit fugiat laudantium cupiditate similique vel vitae?</div>
+                </div>
+                <div class="cards-metricas" style="--clr:#32c4ae;">
+                    <h3 class="titulo-card">Temperatura</h3>
+                    <div class="descricao-card">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis illo
+                        repudiandae, accusantium animi quibusdam laborum! Odit ut sequi eius consectetur ea quidem
+                        perspiciatis provident quo ab, nulla reprehenderit dicta voluptas.</div>
+                </div>
+            </div>
+        </section>
+        <section id="setima">
+            <h1 class="titulo-setima">Como funciona?</h1>
+            <div class="cards-carrossel">
+                <img class="card-carrossel" id="slide1" src="./assets/imgs/diagnostico.png" alt="">
+                <img class="card-carrossel" id="slide2" src="./assets/imgs/identificacao.webp" alt="">
+                <img class="card-carrossel" id="slide3" src="./assets/imgs/manutencao.png" alt="">
+                <img class="card-carrossel" id="slide4" src="./assets/imgs/blur.png" alt="">
+                <img class="card-carrossel" id="slide5" src="./assets/imgs/CryptoSight.png" alt="">
+            </div>
+        </section>
     </main>
+    <footer>
+        <div class="cta">
+            <h3>Deseja fazer parte?</h3>
+            <button class="sim">Juntar-se</button>
+        </div>
+        <div class="faixa"></div>
+        <div class="tools">
+            <div class="links">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="">Tal</a></li>
+                    <li><a href="">Tal</a></li>
+                    <li><a href="">Tal</a></li>
+                    <li><a href="">Tal</a></li>
+                </ul>
+            </div>
+            <div class="logo-footer">
+                <img src="./assets/imgs/ChatGPT_Image_11_de_ago._de_2026__13_30_37-removebg-preview(1) 2.png" alt="" class="icone">
+            </div>
+        </div>
+        <div class="copy">CryptoSight©</div>
+    </footer>
+    <!--  <div class="blur-topo"></div>
+   <div class="blur-meio"></div> -->
 </body>
+
 </html>
 
 <script src="animations.js"></script>
-
-<script>
-
-
-    function entrar() {
-        aguardar();
-
-        var emailVar = email_input.value;
-        var senhaVar = senha_input.value;
-
-        if (emailVar == "" || senhaVar == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-            finalizarAguardar();
-            return false;
-        }
-        else {
-            setInterval(sumirMensagem, 5000)
-        }
-
-        console.log("FORM LOGIN: ", emailVar);
-        console.log("FORM SENHA: ", senhaVar);
-
-        fetch("/usuarios/autenticar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                emailServer: emailVar,
-                senhaServer: senhaVar
-            })
-        }).then(function (resposta) {
-            console.log("ESTOU NO THEN DO entrar()!")
-
-            if (resposta.ok) {
-                console.log(resposta);
-
-                resposta.json().then(json => {
-                    console.log(json);
-                    console.log(JSON.stringify(json));
-                    sessionStorage.EMAIL_USUARIO = json.email;
-                    sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.id;
-
-                    setTimeout(function () {
-                        window.location = "./dashboard/cards.html";
-                    }, 1000); // apenas para exibir o loading
-
-                });
-
-            } else {
-
-                console.log("Houve um erro ao tentar realizar o login!");
-
-                resposta.text().then(texto => {
-                    console.error(texto);
-                    finalizarAguardar(texto);
-                });
-            }
-
-        }).catch(function (erro) {
-            console.log(erro);
-        })
-
-        return false;
-    }
-
-    function sumirMensagem() {
-        cardErro.style.display = "none"
-    }
-
-</script>
+<script src="modelos.js"></script>
