@@ -516,6 +516,7 @@ header {
     right: 6vw;
     bottom: 15vh;
     transition: all .2s;
+
     img {
         width: 41vw;
     }
@@ -1530,36 +1531,42 @@ footer {
         border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
     }
 }
+
 .menu {
     display: flex;
     justify-content: center;
 }
+
 .botaomenu {
-  background-color: transparent;
-  color: white;
-  padding: 12px 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
+    background-color: transparent;
+    color: white;
+    padding: 12px 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
 }
+
 .conteudodomenut {
-  display: none;
-  position: absolute;
-  background-color: #035145;
-  width: 100%;
-  margin-top: 50px;
+    display: none;
+    position: absolute;
+    background-color: #035145;
+    width: 100%;
+    margin-top: 50px;
 }
+
 .conteudodomenut a {
-  color: white;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
 }
+
 .conteudodomenut a:hover {
-  background-color: #00E6A6;
+    background-color: #00E6A6;
 }
+
 .menu:hover .conteudodomenut {
-  display: block;
+    display: block;
 }
 
 /* Fonts */
@@ -1631,6 +1638,18 @@ footer {
         font-size: 50px;
     }
 
+    @keyframes diminuir1 {
+        0% {
+            height: 100px;
+        }
+    }
+
+    @keyframes diminuir2 {
+        0% {
+            font-size: 50px;
+        }
+    }
+
     .slogan {
         position: relative;
         left: auto;
@@ -1689,15 +1708,16 @@ footer {
         right: 5vw;
         top: 55vh;
     }
-    main {
-    position: relative;
-    width: 100%;
-    margin: 0;
-}
 
-.primeira {
-    margin-top: 100vh;
-}
+    main {
+        position: relative;
+        width: 100%;
+        margin: 0;
+    }
+
+    .primeira {
+        margin-top: 100vh;
+    }
 
     .primeira {
         margin-top: 100vh;
@@ -1715,24 +1735,29 @@ footer {
     .textoEntender {
         width: 100%;
     }
+
     .titulo {
         font-size: clamp(30px, 7vw, 50pt);
         text-align: center;
     }
+
     .oqe {
         font-size: clamp(16px, 4vw, 18pt);
         text-align: justify;
     }
+
     .metodos {
         width: 90%;
         height: auto;
         padding: 5vh 0 10vh;
         gap: 3vh;
     }
+
     .tituloMetodos {
         text-align: center;
         font-size: 20pt;
     }
+
     .proofs {
         width: 100%;
         height: auto;
@@ -1741,6 +1766,7 @@ footer {
         flex-direction: column;
         gap: 3vh;
     }
+
     .cards-proofs,
     .pow {
         min-width: 0;
@@ -1749,14 +1775,17 @@ footer {
         height: auto;
         min-height: 300px;
     }
+
     .pow-conteudo {
         padding: 6vh 4vw;
     }
+
     .powDescricao,
     .posDescricao {
         font-size: 15pt;
         padding: 0 5vw;
     }
+
     .segunda {
         width: 100%;
         min-height: auto;
@@ -1766,6 +1795,7 @@ footer {
         flex-direction: column;
         align-items: center;
     }
+
     .block {
         position: relative;
         top: auto;
@@ -1774,12 +1804,14 @@ footer {
         margin-bottom: 3vh;
         font-size: clamp(30px, 8vw, 50pt);
     }
+
     .card-block {
         width: 100%;
         margin: 0;
         padding: 6vw;
         font-size: 13pt;
     }
+
     .funcionamento {
         position: relative;
         left: auto;
@@ -1791,15 +1823,18 @@ footer {
         display: flex;
         justify-content: center;
     }
+
     .funcionamento img {
         width: 100%;
         max-width: 600px;
     }
+
     .blockchainImg {
         position: relative;
         bottom: auto;
         right: auto;
     }
+
     #terceira {
         width: 100%;
         height: auto;
@@ -1808,6 +1843,7 @@ footer {
         margin-bottom: 10vh;
         padding: 5vh 0 20vh;
     }
+
     .tituloT {
         position: sticky;
         top: 5vh;
@@ -1815,6 +1851,7 @@ footer {
         margin: 5vh 0;
         z-index: 100;
     }
+
     .cartoes-problemas {
         position: sticky;
         width: 80%;
@@ -1822,22 +1859,28 @@ footer {
         padding: 8%;
         gap: 3rem;
     }
+
     .titulo-problema {
         font-size: clamp(25px, 6vw, 35pt);
     }
+
     .desc-problema {
         font-size: clamp(17px, 4vw, 20pt);
     }
+
     .diagnostico {
         top: 10vh;
         margin-top: 0;
     }
+
     .identificacao {
         top: 13vh;
     }
+
     .energetico {
         top: 16vh;
     }
+
     #quarta {
         width: 100%;
         height: auto;
@@ -1846,6 +1889,7 @@ footer {
         flex-direction: column;
         padding-top: 10vh;
     }
+
     .tituloSolus {
         position: relative;
         left: auto;
@@ -1854,12 +1898,14 @@ footer {
         font-size: clamp(35px, 8vw, 50pt);
         align-self: flex-start;
     }
+
     .solucoes {
         width: 100%;
         display: flex;
         flex-direction: column;
         gap: 5vh;
     }
+
     .solucao,
     #detec {
         width: 94%;
@@ -1868,9 +1914,11 @@ footer {
         flex-direction: column;
         min-height: 0;
     }
+
     #detec {
         flex-direction: column;
     }
+
     .solucao img,
     #detec img {
         width: 100%;
@@ -1878,18 +1926,22 @@ footer {
         max-height: 50vh;
         object-fit: contain;
     }
+
     .textoSolu {
         height: auto;
         min-height: 300px;
         padding: 8%;
         gap: 4vh;
     }
+
     .tituloSolu {
         font-size: clamp(25px, 6vw, 30pt);
     }
+
     .descricaoSolu {
         font-size: clamp(16px, 4vw, 20pt);
     }
+
     #quinta {
         width: 100%;
         height: auto;
@@ -1898,6 +1950,7 @@ footer {
         padding: 5vh 0 10vh;
         overflow: hidden;
     }
+
     .titulomaquina {
         width: 90%;
         padding-right: 0;
@@ -1905,6 +1958,7 @@ footer {
         font-size: clamp(32px, 8vw, 60pt);
         line-height: 1.1;
     }
+
     .maquinas {
         width: 100%;
         height: auto;
@@ -1914,12 +1968,14 @@ footer {
         align-items: center;
         gap: 4vh;
     }
+
     .maquina {
         width: 90%;
         height: auto;
         min-height: 350px;
         order: 1;
     }
+
     .maquinaDescricao {
         width: 100%;
         margin-left: 0;
@@ -1927,18 +1983,21 @@ footer {
         font-size: clamp(16px, 4vw, 20pt);
         text-align: center;
     }
+
     .escolha {
         height: auto;
         width: 100%;
         padding-top: 5vh;
         gap: 2vh;
     }
+
     .escolher {
         width: 80%;
         height: 60px;
         min-height: 60px;
         font-size: 18pt;
     }
+
     .gradiente {
         z-index: 0;
         width: 100%;
@@ -1948,6 +2007,7 @@ footer {
         transform: translateY(-50%);
         pointer-events: none;
     }
+
     model-viewer {
         position: relative;
         z-index: 2;
@@ -1955,12 +2015,14 @@ footer {
         height: 500px;
         order: 2;
     }
+
     .asic3d,
     .gpu3d,
     .minerig3d {
         position: relative;
         z-index: 2;
     }
+
     #sexta {
         width: 100%;
         min-width: 0;
@@ -1969,6 +2031,7 @@ footer {
         padding-bottom: 10vh;
         background-position: center;
     }
+
     .sexta-titulo {
         position: relative;
         top: auto;
@@ -1977,12 +2040,14 @@ footer {
         margin: 5vh 5vw 0;
         font-size: clamp(32px, 8vw, 50pt);
     }
+
     .sexta-desc {
         width: 85%;
         margin: 5vh auto 0;
         padding-right: 0;
         font-size: clamp(17px, 4vw, 22pt);
     }
+
     .grid-cards {
         width: 90%;
         height: auto;
@@ -1994,6 +2059,7 @@ footer {
         grid-template-rows: repeat(3, 1fr);
         gap: 3vh;
     }
+
     .cards-metricas {
         width: 100%;
         height: 180px;
@@ -2001,42 +2067,51 @@ footer {
         padding: 4vh 4vw;
         overflow: scroll;
     }
+
     .cards-metricas:hover {
         height: 180px;
     }
+
     .titulo-card {
         font-size: clamp(22px, 5vw, 30pt);
     }
+
     .descricao-card {
         font-size: clamp(15px, 3.5vw, 20pt);
     }
+
     #setima {
         width: 100%;
         height: 100vh;
         min-height: 700px;
         overflow: hidden;
     }
+
     .titulo-setima {
         position: absolute;
         top: 5vh;
         left: 5vw;
         font-size: clamp(32px, 8vw, 50pt);
     }
+
     .cards-carrossel {
         width: 90%;
         height: 70%;
         margin-top: 10vh;
     }
+
     .card-carrossel {
         flex: 0 0 100%;
         width: 100%;
         height: 100%;
         object-fit: contain;
     }
+
     .cards-carrossel::scroll-button(right),
     .cards-carrossel::scroll-button(left) {
         display: none;
     }
+
     footer {
         width: 100%;
         height: auto;
@@ -2048,20 +2123,25 @@ footer {
         align-items: center;
         gap: 5vh;
     }
+
     .logo-footer img {
         height: 120px;
     }
+
     .cta {
         margin-bottom: 50px;
         text-align: center;
     }
+
     .cta h3 {
         font-size: clamp(25px, 6vw, 30pt);
     }
+
     .sim {
         font-size: 22px;
         padding: 1.8vh 5vw;
     }
+
     .copy {
         position: absolute;
         bottom: 2vh;
@@ -2076,146 +2156,199 @@ footer {
     header {
         justify-content: center;
     }
+
     .esquerdaH {
         height: 65%;
         padding: 0 6vw;
     }
+
     .logo img {
         height: 65px;
     }
+
     .logo .crypto {
         font-size: 30px;
     }
+
+    @keyframes diminuir1 {
+        0% {
+            height: 65px;
+        }
+    }
+
+    @keyframes diminuir2 {
+        0% {
+            font-size: 30px;
+        }
+    }
+
     .slogan {
         width: 90%;
         font-size: 19px;
     }
+
     .direitaH {
         bottom: 6vh;
     }
+
     .juntar {
         font-size: 18px;
         padding: 1.5vh 7vw;
     }
+
     .segunda {
         padding-left: 6vw;
         padding-right: 6vw;
     }
+
     .block {
         font-size: 34px;
     }
+
     .card-block {
         font-size: 14px;
         line-height: 1.6;
     }
+
     .funcionamento img {
         width: 100%;
     }
+
     #terceira {
         gap: 30vh;
     }
+
     .tituloT {
         font-size: 36px;
     }
+
     .cartoes-problemas {
         width: 88%;
         min-height: 380px;
         padding: 8%;
     }
+
     .titulo-problema {
         font-size: 25px;
     }
+
     .desc-problema {
         font-size: 16px;
         line-height: 1.5;
     }
+
     .tituloSolus {
         font-size: 36px;
     }
+
     .textoSolu {
         min-height: 320px;
         padding: 8%;
     }
+
     .tituloSolu {
         font-size: 25px;
     }
+
     .descricaoSolu {
         font-size: 16px;
         line-height: 1.5;
     }
+
     #quinta {
         min-height: 900px;
     }
+
     .titulomaquina {
         font-size: 36px;
     }
+
     .maquinas {
         min-height: 750px;
     }
+
     .maquina {
         min-height: 400px;
     }
+
     .maquinaDescricao {
         font-size: 16px;
         line-height: 1.5;
     }
+
     .escolher {
         width: 85%;
         font-size: 16px;
     }
+
     model-viewer {
         width: 100%;
         height: 400px;
     }
+
     .gradiente {
         height: 50vh;
         top: 80%;
     }
+
     #sexta {
         min-height: 1300px;
     }
+
     .sexta-titulo {
         font-size: 36px;
     }
+
     .sexta-desc {
         font-size: 17px;
         line-height: 1.5;
     }
+
     .grid-cards {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(6, 180px);
         gap: 20px;
     }
+
     .cards-metricas {
         height: 180px;
         min-height: 180px;
     }
+
     .cards-metricas:hover {
         height: 180px;
     }
+
     .titulo-card {
         font-size: 25px;
     }
+
     .descricao-card {
         font-size: 15px;
         line-height: 1.5;
     }
+
     #setima {
         min-height: 650px;
     }
+
     .titulo-setima {
         font-size: 36px;
     }
+
     .cards-carrossel {
         width: 90%;
         height: 65%;
     }
+
     footer {
         min-height: 450px;
     }
+
     .logo-footer img {
         height: 100px;
     }
+
     .copy {
         font-size: 12px;
     }
@@ -2225,34 +2358,55 @@ footer {
     .logo {
         gap: 8px;
     }
+
     .logo img {
         height: 55px;
     }
+
     .logo .crypto {
         font-size: 25px;
     }
+
+    @keyframes diminuir1 {
+        0% {
+            height: 55px;
+        }
+    }
+
+    @keyframes diminuir2 {
+        0% {
+            font-size: 25px;
+        }
+    }
+
     .slogan {
         font-size: 17px;
     }
+
     .juntar {
         font-size: 17px;
     }
+
     .titulo {
         font-size: 29px;
     }
+
     .tituloT,
     .tituloSolus,
     .sexta-titulo,
     .titulo-setima {
         font-size: 32px;
     }
+
     .cartoes-problemas {
         width: 90%;
         min-height: 360px;
     }
+
     .titulomaquina {
         font-size: 32px;
     }
+
     model-viewer {
         height: 350px;
     }
